@@ -34,7 +34,17 @@ document.querySelector('.newsletter-form').addEventListener('submit', function(e
   // Aqui você integraria com seu serviço de email marketing
   // Exemplo: Mailchimp, ConvertKit, etc.
   
-  alert('Obrigado por se inscrever! Em breve você receberá nossas novidades.');
+  // Feedback visual
+  const button = this.querySelector('button');
+  const originalText = button.textContent;
+  button.textContent = 'Inscrito! ✓';
+  button.style.background = 'linear-gradient(90deg, #00cc00, #00aa00)';
+  
+  setTimeout(() => {
+    button.textContent = originalText;
+    button.style.background = 'linear-gradient(90deg, var(--primary), var(--secondary))';
+  }, 3000);
+  
   this.reset();
 });
 
@@ -50,4 +60,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       });
     }
   });
+});
+
+// Tracking de cliques nos produtos (para Google Analytics)
+document.querySelectorAll('.product a').forEach(button => {
+  button.addEventListener('click', function() {
+    // Aqui você pode adicionar eventos do Google Analytics
+    console.log('Produto clicado:', this.closest('.product').querySelector('.product-title').textContent);
+  });
+});
+
+// Animação de entrada para elementos
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+// Observar elementos para animação
+document.querySelectorAll('.product, .testimonial').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
 });
