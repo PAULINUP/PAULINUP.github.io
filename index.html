@@ -20,17 +20,17 @@
   <meta property="og:description" content="Vista o som. Sinta o ritmo. Seja Impontuality. Coleção exclusiva de camisetas.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://seudominio.com">
-  <meta property="og:image" content="https://seudominio.com/logo-impontuality.png">
+  <meta property="og:image" content="https://php8.umapenca.com/storage/products/impontuality-298643.jpg">
   <meta property="og:site_name" content="Impontuality">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Impontuality | Camisetas de Música Eletrônica">
   <meta name="twitter:description" content="Vista o som. Sinta o ritmo. Seja Impontuality.">
-  <meta name="twitter:image" content="https://seudominio.com/logo-impontuality.png">
+  <meta name="twitter:image" content="https://php8.umapenca.com/storage/products/impontuality-298643.jpg">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎵</text></svg>">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,9 +73,14 @@
       background: rgba(0,0,0,0.95);
     }
     
-    header img {
-      height: 40px;
-      transition: all 0.3s;
+    .logo-text {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
     }
     
     nav a {
@@ -152,10 +157,10 @@
       max-width: 800px;
     }
     
-    .hero img.logo {
-      width: 180px;
-      margin-bottom: 25px;
-      filter: drop-shadow(0 0 15px rgba(0, 102, 255, 0.5));
+    .hero-logo {
+      font-size: 5rem;
+      margin-bottom: 20px;
+      display: block;
       animation: float 6s ease-in-out infinite;
     }
     
@@ -585,6 +590,45 @@
       background: linear-gradient(90deg, var(--secondary), var(--primary));
     }
     
+    /* Modal para e-mail salvo */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .modal-content {
+      background: #111;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      border: 1px solid var(--primary);
+    }
+    
+    .modal h3 {
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+    
+    .modal-close {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    
     /* Responsividade */
     @media (max-width: 768px) {
       .hero h1 {font-size: 2rem;}
@@ -596,13 +640,15 @@
       .newsletter-form input, .newsletter-form button {border-radius: 50px; margin: 5px 0;}
       header {padding: 15px 20px;}
       .soundon-player {height: 500px;}
-      .hero img.logo {width: 140px;}
+      .hero-logo {font-size: 4rem;}
+      .logo-text {font-size: 1.5rem;}
     }
     
     @media (max-width: 480px) {
       .hero h1 {font-size: 1.8rem;}
       .soundon-player {height: 400px;}
       .product {max-width: 100%;}
+      .hero-logo {font-size: 3rem;}
     }
   </style>
 </head>
@@ -613,8 +659,8 @@
   </div>
 
   <header id="main-header">
-    <!-- LOGO - Substitua pelo caminho correto da sua logo -->
-    <img src="logo-impontuality.png" alt="Impontuality Logo">
+    <!-- Logo como texto estilizado -->
+    <a href="#home" class="logo-text">IMPONTUALITY</a>
     <nav>
       <a href="#home">Home</a>
       <a href="#music">Música</a>
@@ -626,12 +672,12 @@
 
   <section class="hero" id="home">
     <div class="hero-content">
-      <!-- LOGO - Substitua pelo caminho correto da sua logo -->
-      <img src="logo-impontuality.png" alt="Impontuality Logo" class="logo">
+      <!-- Logo como emoji/ícone estilizado -->
+      <div class="hero-logo">🎵</div>
       <h1>Vista o som. Sinta o ritmo. Seja Impontuality.</h1>
       <p>Não é apenas uma camiseta. É uma declaração. É a materialização da batida que pulsa em suas veias.</p>
       <div>
-        <a href="https://umapenca.com/impontuality" class="btn" target="_blank">Comprar Agora - Oferta Especial</a>
+        <a href="#store" class="btn">Ver Coleção - Oferta Especial</a>
         <a href="#music" class="btn btn-secondary">Ouvir o Som</a>
       </div>
     </div>
@@ -655,46 +701,60 @@
     <h2>Coleção Exclusiva Impontuality</h2>
     <p style="max-width: 600px; margin: 0 auto 40px; color: #bbb;">Vista a batida. Sinta a energia. Seja parte do movimento.</p>
     <div class="products">
-      <!-- PRODUTO 1 - Use as URLs reais das suas camisetas -->
+      <!-- PRODUTO 1 - URLs reais das camisetas -->
       <div class="product">
         <div class="product-badge">Mais Vendida</div>
-        <img src="https://php8.https://umapenca.com/impontuality/camiseta/the-sun-298645.html" alt="Camiseta The sun">
+        <img src="https://php8.umapenca.com/storage/products/impontuality-298643.jpg" alt="Camiseta Impontuality">
         <div class="product-info">
-          <div class="product-title">Camiseta Quantum Pulse</div>
+          <div class="product-title">Camiseta Impontuality</div>
           <div class="product-price">
             <span class="old-price">R$ 79,90</span>
             <span>R$ 69,90</span>
           </div>
         </div>
-        <a href="https://umapenca.com/impontuality" target="_blank">Comprar Agora</a>
+        <a href="https://umapenca.com/impontuality/camiseta/impontuality-298643.html" target="_blank">Comprar Agora</a>
       </div>
       
-      <!-- PRODUTO 2 - Use as URLs reais das suas camisetas -->
+      <!-- PRODUTO 2 -->
       <div class="product">
         <div class="product-badge">Lançamento</div>
-        <img src="https://php8.https://umapenca.com/impontuality/camiseta/impontuality-298643.html" alt="Camiseta Impontuality">
+        <img src="https://php8.umapenca.com/storage/products/the-sun-298645.jpg" alt="Camiseta The Sun">
         <div class="product-info">
-          <div class="product-title">Camiseta Rhythm Flow</div>
+          <div class="product-title">Camiseta The Sun</div>
           <div class="product-price">
             <span class="old-price">R$ 79,90</span>
             <span>R$ 69,90</span>
           </div>
         </div>
-        <a href="https://umapenca.com/impontuality" target="_blank">Comprar Agora</a>
+        <a href="https://umapenca.com/impontuality/camiseta/the-sun-298645.html" target="_blank">Comprar Agora</a>
       </div>
       
-      <!-- PRODUTO 3 - Use as URLs reais das suas camisetas -->
+      <!-- PRODUTO 3 -->
       <div class="product">
         <div class="product-badge">Edição Limitada</div>
-        <img src="https://php8.https://umapenca.com/impontuality/camiseta/dream-of-tomorrow-298647.html" alt="Camiseta Dream of tomorrow">
+        <img src="https://php8.umapenca.com/storage/products/dream-of-tomorrow-298647.jpg" alt="Camiseta Dream of Tomorrow">
         <div class="product-info">
-          <div class="product-title">Camiseta Bass Dimension</div>
+          <div class="product-title">Camiseta Dream of Tomorrow</div>
           <div class="product-price">
             <span class="old-price">R$ 79,90</span>
             <span>R$ 69,90</span>
           </div>
         </div>
-        <a href="https://umapenca.com/impontuality" target="_blank">Comprar Agora</a>
+        <a href="https://umapenca.com/impontuality/camiseta/dream-of-tomorrow-298647.html" target="_blank">Comprar Agora</a>
+      </div>
+
+      <!-- PRODUTO 4 -->
+      <div class="product">
+        <div class="product-badge">Novidade</div>
+        <img src="https://php8.umapenca.com/storage/products/drive-298646.jpg" alt="Camiseta Drive">
+        <div class="product-info">
+          <div class="product-title">Camiseta Drive</div>
+          <div class="product-price">
+            <span class="old-price">R$ 79,90</span>
+            <span>R$ 69,90</span>
+          </div>
+        </div>
+        <a href="https://umapenca.com/impontuality/camiseta/drive-298646.html" target="_blank">Comprar Agora</a>
       </div>
     </div>
   </section>
@@ -736,7 +796,7 @@
       <h3>Junte-se ao Movimento</h3>
       <p style="color: #aaa; margin-bottom: 15px;">Receba novidades, lançamentos exclusivos e descontos especiais.</p>
       <form class="newsletter-form" id="newsletter-form">
-        <input type="email" placeholder="Seu melhor e-mail" required>
+        <input type="email" placeholder="Seu melhor e-mail" required id="email-input">
         <button type="submit">Inscrever</button>
       </form>
     </div>
@@ -749,6 +809,15 @@
     </div>
     <p>© 2025 Impontuality. Todos os direitos reservados.</p>
   </footer>
+
+  <!-- Modal para e-mail salvo -->
+  <div class="modal" id="email-modal">
+    <div class="modal-content">
+      <h3>Inscrição Confirmada!</h3>
+      <p>Obrigado por se juntar ao movimento Impontuality. Em breve você receberá nossas novidades.</p>
+      <button class="modal-close" id="modal-close">Fechar</button>
+    </div>
+  </div>
 
   <!-- JavaScript Corrigido -->
   <script>
@@ -780,10 +849,18 @@
     updateUrgencyCounter();
     setInterval(updateUrgencyCounter, 60000);
     
-    // Newsletter form handler
+    // Newsletter form handler - SEM BANCO DE DADOS
     document.getElementById('newsletter-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      const email = this.querySelector('input[type="email"]').value;
+      const email = document.getElementById('email-input').value;
+      
+      // Salvar no localStorage (alternativa sem banco de dados)
+      let emails = JSON.parse(localStorage.getItem('impontuality_emails') || '[]');
+      emails.push({
+        email: email,
+        date: new Date().toISOString()
+      });
+      localStorage.setItem('impontuality_emails', JSON.stringify(emails));
       
       // Feedback visual
       const button = this.querySelector('button');
@@ -791,12 +868,20 @@
       button.textContent = 'Inscrito! ✓';
       button.style.background = 'linear-gradient(90deg, #00cc00, #00aa00)';
       
+      // Mostrar modal de confirmação
+      document.getElementById('email-modal').style.display = 'flex';
+      
       setTimeout(() => {
         button.textContent = originalText;
         button.style.background = 'linear-gradient(90deg, var(--primary), var(--secondary))';
       }, 3000);
       
       this.reset();
+    });
+    
+    // Fechar modal
+    document.getElementById('modal-close').addEventListener('click', function() {
+      document.getElementById('email-modal').style.display = 'none';
     });
     
     // Smooth scroll para âncoras
@@ -812,6 +897,14 @@
         }
       });
     });
+
+    // Contador de visitas (opcional)
+    if (!localStorage.getItem('visit_count')) {
+      localStorage.setItem('visit_count', '1');
+    } else {
+      let count = parseInt(localStorage.getItem('visit_count'));
+      localStorage.setItem('visit_count', (count + 1).toString());
+    }
   </script>
 </body>
 </html>
