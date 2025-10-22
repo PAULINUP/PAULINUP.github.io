@@ -44,6 +44,7 @@
       background-color: #000;
       color: #fff;
       overflow-x: hidden;
+      line-height: 1.6;
     }
     
     /* Variáveis CSS para consistência */
@@ -105,7 +106,7 @@
       background: linear-gradient(90deg, #ff0066, #ff3300);
       color: white;
       text-align: center;
-      padding: 8px;
+      padding: 12px;
       font-size: 0.9rem;
       font-weight: bold;
       position: relative;
@@ -148,11 +149,12 @@
     .hero-content {
       position: relative;
       z-index: 1;
+      max-width: 800px;
     }
     
     .hero img.logo {
-      width: 160px;
-      margin-bottom: 20px;
+      width: 180px;
+      margin-bottom: 25px;
       filter: drop-shadow(0 0 15px rgba(0, 102, 255, 0.5));
       animation: float 6s ease-in-out infinite;
     }
@@ -196,6 +198,8 @@
       overflow: hidden;
       display: inline-block;
       box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
+      border: none;
+      cursor: pointer;
     }
     
     .btn:before {
@@ -228,7 +232,7 @@
       background: rgba(0, 102, 255, 0.1);
     }
     
-    /* Seção de música com mais engajamento */
+    /* Seção de música com SoundOn */
     .music {
       background-color: #050505;
       padding: 100px 20px;
@@ -264,16 +268,14 @@
       background: linear-gradient(90deg, var(--primary), var(--secondary));
     }
     
-    .music iframe {
+    .soundon-player {
+      width: 100%;
+      max-width: 800px;
+      height: 600px;
+      border: none;
       border-radius: 12px;
-      margin-top: 30px;
+      margin: 30px auto;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      transition: all 0.3s;
-      max-width: 100%;
-    }
-    
-    .music iframe:hover {
-      transform: scale(1.02);
     }
     
     .music p {
@@ -325,13 +327,16 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     
     .product {
       background: #111;
       border-radius: 20px;
       overflow: hidden;
-      width: 280px;
+      width: 100%;
+      max-width: 350px;
       transition: 0.4s;
       position: relative;
       border: 1px solid rgba(255,255,255,0.05);
@@ -358,7 +363,7 @@
     
     .product img { 
       width: 100%; 
-      height: 300px;
+      height: 350px;
       object-fit: cover;
       transition: all 0.5s;
     }
@@ -368,19 +373,20 @@
     }
     
     .product-info {
-      padding: 15px;
+      padding: 20px;
     }
     
     .product-title {
       font-weight: bold;
-      margin-bottom: 5px;
-      font-size: 1.1rem;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
     }
     
     .product-price {
       color: var(--accent);
       font-weight: bold;
       margin-bottom: 15px;
+      font-size: 1.1rem;
     }
     
     .product-price .old-price {
@@ -398,6 +404,7 @@
       text-decoration: none;
       font-weight: bold;
       transition: all 0.3s;
+      text-align: center;
     }
     
     .product a:hover {
@@ -476,7 +483,8 @@
       background: #111;
       border-radius: 15px;
       padding: 25px;
-      width: 350px;
+      width: 100%;
+      max-width: 350px;
       text-align: left;
       border-left: 3px solid var(--primary);
     }
@@ -559,6 +567,7 @@
       border-radius: 50px 0 0 50px;
       background: #111;
       color: white;
+      outline: none;
     }
     
     .newsletter-form button {
@@ -586,6 +595,14 @@
       .newsletter-form {flex-direction: column;}
       .newsletter-form input, .newsletter-form button {border-radius: 50px; margin: 5px 0;}
       header {padding: 15px 20px;}
+      .soundon-player {height: 500px;}
+      .hero img.logo {width: 140px;}
+    }
+    
+    @media (max-width: 480px) {
+      .hero h1 {font-size: 1.8rem;}
+      .soundon-player {height: 400px;}
+      .product {max-width: 100%;}
     }
   </style>
 </head>
@@ -596,8 +613,8 @@
   </div>
 
   <header id="main-header">
-    <!-- SUBSTITUA logo-impontuality.png PELA SUA LOGO REAL -->
-    <img src="logo-impontuality.png" alt="Impontuality Logo" onerror="this.style.display='none'">
+    <!-- LOGO - Substitua pelo caminho correto da sua logo -->
+    <img src="logo-impontuality.png" alt="Impontuality Logo">
     <nav>
       <a href="#home">Home</a>
       <a href="#music">Música</a>
@@ -609,8 +626,8 @@
 
   <section class="hero" id="home">
     <div class="hero-content">
-      <!-- SUBSTITUA logo-impontuality.png PELA SUA LOGO REAL -->
-      <img src="logo-impontuality.png" alt="Impontuality Logo" class="logo" onerror="this.style.display='none'">
+      <!-- LOGO - Substitua pelo caminho correto da sua logo -->
+      <img src="logo-impontuality.png" alt="Impontuality Logo" class="logo">
       <h1>Vista o som. Sinta o ritmo. Seja Impontuality.</h1>
       <p>Não é apenas uma camiseta. É uma declaração. É a materialização da batida que pulsa em suas veias.</p>
       <div>
@@ -627,19 +644,21 @@
       O som nasce da mesma energia que veste a marca.  
       Bem-vindo ao universo Impontuality.
     </p>
-    <!-- Player do Spotify corrigido -->
-    <iframe src="https://open.spotify.com/embed/artist/3XF6F5m4aJmdBggM3QWgtg?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    <a href="https://open.spotify.com/artist/3XF6F5m4aJmdBggM3QWgtg" class="btn" target="_blank">Ouça em todas as plataformas</a>
+    
+    <!-- Player do SoundOn -->
+    <iframe class="soundon-player" src="https://www.soundon.global/bio/impontuality" frameborder="0" allowfullscreen></iframe>
+    
+    <a href="https://www.soundon.global/bio/impontuality" class="btn" target="_blank">Ouvir no SoundOn</a>
   </section>
 
   <section class="store" id="store">
     <h2>Coleção Exclusiva Impontuality</h2>
     <p style="max-width: 600px; margin: 0 auto 40px; color: #bbb;">Vista a batida. Sinta a energia. Seja parte do movimento.</p>
     <div class="products">
-      <!-- PRODUTO 1 - SUBSTITUA PELA SUA CAMISETA REAL -->
+      <!-- PRODUTO 1 - Use as URLs reais das suas camisetas -->
       <div class="product">
         <div class="product-badge">Mais Vendida</div>
-        <img src="https://via.placeholder.com/300x300/111111/FFFFFF?text=CAMISETA+1" alt="Camiseta Impontuality">
+        <img src="https://php8.https://umapenca.com/impontuality/camiseta/the-sun-298645.html" alt="Camiseta The sun">
         <div class="product-info">
           <div class="product-title">Camiseta Quantum Pulse</div>
           <div class="product-price">
@@ -650,10 +669,10 @@
         <a href="https://umapenca.com/impontuality" target="_blank">Comprar Agora</a>
       </div>
       
-      <!-- PRODUTO 2 - SUBSTITUA PELA SUA CAMISETA REAL -->
+      <!-- PRODUTO 2 - Use as URLs reais das suas camisetas -->
       <div class="product">
         <div class="product-badge">Lançamento</div>
-        <img src="https://via.placeholder.com/300x300/111111/FFFFFF?text=CAMISETA+2" alt="Camiseta Impontuality">
+        <img src="https://php8.https://umapenca.com/impontuality/camiseta/impontuality-298643.html" alt="Camiseta Impontuality">
         <div class="product-info">
           <div class="product-title">Camiseta Rhythm Flow</div>
           <div class="product-price">
@@ -664,10 +683,10 @@
         <a href="https://umapenca.com/impontuality" target="_blank">Comprar Agora</a>
       </div>
       
-      <!-- PRODUTO 3 - SUBSTITUA PELA SUA CAMISETA REAL -->
+      <!-- PRODUTO 3 - Use as URLs reais das suas camisetas -->
       <div class="product">
         <div class="product-badge">Edição Limitada</div>
-        <img src="https://via.placeholder.com/300x300/111111/FFFFFF?text=CAMISETA+3" alt="Camiseta Impontuality">
+        <img src="https://php8.https://umapenca.com/impontuality/camiseta/dream-of-tomorrow-298647.html" alt="Camiseta Dream of tomorrow">
         <div class="product-info">
           <div class="product-title">Camiseta Bass Dimension</div>
           <div class="product-price">
@@ -716,7 +735,7 @@
     <div class="newsletter">
       <h3>Junte-se ao Movimento</h3>
       <p style="color: #aaa; margin-bottom: 15px;">Receba novidades, lançamentos exclusivos e descontos especiais.</p>
-      <form class="newsletter-form">
+      <form class="newsletter-form" id="newsletter-form">
         <input type="email" placeholder="Seu melhor e-mail" required>
         <button type="submit">Inscrever</button>
       </form>
@@ -724,9 +743,9 @@
     
     <div class="socials">
       <a href="https://open.spotify.com/artist/3XF6F5m4aJmdBggM3QWgtg" target="_blank">Spotify</a> |
-      <a href="https://www.tiktok.com" target="_blank">TikTok</a> |
-      <a href="https://www.instagram.com" target="_blank">Instagram</a> |
-      <a href="https://www.youtube.com" target="_blank">YouTube</a>
+      <a href="https://www.tiktok.com/@impontuality" target="_blank">TikTok</a> |
+      <a href="https://www.instagram.com/impontuality" target="_blank">Instagram</a> |
+      <a href="https://www.youtube.com/@impontuality" target="_blank">YouTube</a>
     </div>
     <p>© 2025 Impontuality. Todos os direitos reservados.</p>
   </footer>
@@ -762,7 +781,7 @@
     setInterval(updateUrgencyCounter, 60000);
     
     // Newsletter form handler
-    document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
       e.preventDefault();
       const email = this.querySelector('input[type="email"]').value;
       
