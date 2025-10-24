@@ -10,13 +10,13 @@
       w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
       ttq.load('D3TFTPJC77U1N95E926G');
       ttq.page();
-      // Exemplo de evento de visualização de conteúdo
-ttq.track('ViewContent');
-
-// Exemplo de evento para quando alguém se inscreve na newsletter
-document.getElementById('newsletter-form').addEventListener('submit', function() {
-  ttq.track('CompleteRegistration');
-});
+      
+      // Evento de Visualização de Conteúdo
+      ttq.track('ViewContent', {
+        content_id: 'impontuality_landing_page',
+        content_type: 'product',
+        content_category: 'fashion_apparel'
+      });
     }(window, document, 'ttq');
   </script>
   <!-- End TikTok Pixel Code -->
@@ -26,9 +26,6 @@ document.getElementById('newsletter-form').addEventListener('submit', function()
   
   <!-- Meta Description Otimizada -->
   <meta name="description" content="Camisetas Impontuality: Vista o som, sinta o ritmo. Coleção exclusiva que une moda e música eletrônica. Frete Grátis + 10% OFF">
-  
-  <!-- Resto do código permanece igual -->
-  ...
   
   <!-- Palavras-chave -->
   <meta name="keywords" content="impontuality, camisetas música eletrônica, moda EDM, roupas festival, camisetas personalizadas, música eletrônica, loja online">
@@ -727,8 +724,8 @@ document.getElementById('newsletter-form').addEventListener('submit', function()
       <h1>Vista o som. Sinta o ritmo. Seja Impontuality.</h1>
       <p>Não é apenas uma camiseta. É uma declaração. É a materialização da batida que pulsa em suas veias.</p>
       <div>
-        <a href="#store" class="btn">Ver Coleção - Oferta Especial</a>
-        <a href="#music" class="btn btn-secondary">Ouvir o Som</a>
+        <a href="#store" class="btn" id="cta-hero">Ver Coleção - Oferta Especial</a>
+        <a href="#music" class="btn btn-secondary" id="cta-music">Ouvir o Som</a>
       </div>
     </div>
   </section>
@@ -744,7 +741,7 @@ document.getElementById('newsletter-form').addEventListener('submit', function()
     <!-- Player do Spotify -->
     <iframe class="spotify-player" src="https://open.spotify.com/embed/playlist/4vnd8wPeEkenSPN5QVUMRk?utm_source=generator&theme=0" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     
-    <a href="https://open.spotify.com/playlist/4vnd8wPeEkenSPN5QVUMRk?si=8ziLumFgQ-6yDQvqu3OX_w" class="btn" target="_blank">Abrir no Spotify</a>
+    <a href="https://open.spotify.com/playlist/4vnd8wPeEkenSPN5QVUMRk?si=8ziLumFgQ-6yDQvqu3OX_w" class="btn" target="_blank" id="cta-spotify">Abrir no Spotify</a>
   </section>
 
   <section class="store" id="store">
@@ -762,7 +759,7 @@ document.getElementById('newsletter-form').addEventListener('submit', function()
             <span>R$ 69,90</span>
           </div>
         </div>
-        <a href="https://umapenca.com/impontuality/camiseta/impontuality-298643.html" target="_blank">Comprar Agora</a>
+        <a href="https://umapenca.com/impontuality/camiseta/impontuality-298643.html" target="_blank" class="product-buy" data-product-id="impontuality-298643" data-product-name="Camiseta Impontuality">Comprar Agora</a>
       </div>
       
       <!-- PRODUTO 2 -->
@@ -776,7 +773,7 @@ document.getElementById('newsletter-form').addEventListener('submit', function()
             <span>R$ 69,90</span>
           </div>
         </div>
-        <a href="https://umapenca.com/impontuality/camiseta/the-sun-298645.html" target="_blank">Comprar Agora</a>
+        <a href="https://umapenca.com/impontuality/camiseta/the-sun-298645.html" target="_blank" class="product-buy" data-product-id="the-sun-298645" data-product-name="Camiseta The Sun">Comprar Agora</a>
       </div>
       
       <!-- PRODUTO 3 -->
@@ -790,7 +787,7 @@ document.getElementById('newsletter-form').addEventListener('submit', function()
             <span>R$ 69,90</span>
           </div>
         </div>
-        <a href="https://umapenca.com/impontuality/camiseta/dream-of-tomorrow-298647.html" target="_blank">Comprar Agora</a>
+        <a href="https://umapenca.com/impontuality/camiseta/dream-of-tomorrow-298647.html" target="_blank" class="product-buy" data-product-id="dream-of-tomorrow-298647" data-product-name="Camiseta Dream of Tomorrow">Comprar Agora</a>
       </div>
 
       <!-- PRODUTO 4 -->
@@ -804,7 +801,7 @@ document.getElementById('newsletter-form').addEventListener('submit', function()
             <span>R$ 69,90</span>
           </div>
         </div>
-        <a href="https://umapenca.com/impontuality/camiseta/drive-298646.html" target="_blank">Comprar Agora</a>
+        <a href="https://umapenca.com/impontuality/camiseta/drive-298646.html" target="_blank" class="product-buy" data-product-id="drive-298646" data-product-name="Camiseta Drive">Comprar Agora</a>
       </div>
     </div>
   </section>
@@ -869,7 +866,7 @@ document.getElementById('newsletter-form').addEventListener('submit', function()
     </div>
   </div>
 
-  <!-- JavaScript Corrigido -->
+  <!-- JavaScript Corrigido e Aprimorado com TikTok Events -->
   <script>
     // Efeito de scroll no header
     window.addEventListener('scroll', function() {
@@ -899,7 +896,81 @@ document.getElementById('newsletter-form').addEventListener('submit', function()
     updateUrgencyCounter();
     setInterval(updateUrgencyCounter, 60000);
     
-    // Newsletter form handler - SEM BANCO DE DADOS
+    // TikTok Events - Funções de rastreamento
+    function trackTikTokEvent(event, parameters = {}) {
+      if (typeof ttq !== 'undefined') {
+        ttq.track(event, parameters);
+        console.log(`TikTok Event: ${event}`, parameters);
+      }
+    }
+    
+    // Rastrear visualização de produtos
+    document.addEventListener('DOMContentLoaded', function() {
+      // Rastrear visualização de página de produtos
+      trackTikTokEvent('ViewContent', {
+        content_id: 'impontuality_collection',
+        content_type: 'product_group',
+        content_category: 'fashion_apparel'
+      });
+    });
+    
+    // Rastrear cliques nos botões CTA principais
+    document.getElementById('cta-hero').addEventListener('click', function() {
+      trackTikTokEvent('ClickButton', {
+        button_id: 'hero_cta',
+        button_text: 'Ver Coleção - Oferta Especial',
+        content_type: 'product'
+      });
+    });
+    
+    document.getElementById('cta-music').addEventListener('click', function() {
+      trackTikTokEvent('ClickButton', {
+        button_id: 'music_cta',
+        button_text: 'Ouvir o Som',
+        content_type: 'music'
+      });
+    });
+    
+    document.getElementById('cta-spotify').addEventListener('click', function() {
+      trackTikTokEvent('ClickButton', {
+        button_id: 'spotify_cta',
+        button_text: 'Abrir no Spotify',
+        content_type: 'music'
+      });
+    });
+    
+    // Rastrear cliques em produtos específicos
+    document.querySelectorAll('.product-buy').forEach(button => {
+      button.addEventListener('click', function() {
+        const productId = this.getAttribute('data-product-id');
+        const productName = this.getAttribute('data-product-name');
+        
+        trackTikTokEvent('AddToCart', {
+          content_id: productId,
+          content_name: productName,
+          content_type: 'product',
+          quantity: 1,
+          price: 69.90,
+          currency: 'BRL'
+        });
+        
+        // Rastrear início de checkout
+        trackTikTokEvent('InitiateCheckout', {
+          content_id: productId,
+          content_name: productName,
+          contents: [{
+            id: productId,
+            name: productName,
+            quantity: 1,
+            price: 69.90
+          }],
+          currency: 'BRL',
+          value: 69.90
+        });
+      });
+    });
+    
+    // Newsletter form handler - COM EVENTO TIKTOK
     document.getElementById('newsletter-form').addEventListener('submit', function(e) {
       e.preventDefault();
       const email = document.getElementById('email-input').value;
@@ -911,6 +982,15 @@ document.getElementById('newsletter-form').addEventListener('submit', function()
         date: new Date().toISOString()
       });
       localStorage.setItem('impontuality_emails', JSON.stringify(emails));
+      
+      // TikTok Event - Lead/Subscribe
+      trackTikTokEvent('CompleteRegistration', {
+        content_id: 'newsletter_subscription',
+        content_type: 'lead',
+        email: email, // O TikTok hash automaticamente emails para privacidade
+        currency: 'BRL',
+        value: 0
+      });
       
       // Feedback visual
       const button = this.querySelector('button');
@@ -927,6 +1007,22 @@ document.getElementById('newsletter-form').addEventListener('submit', function()
       }, 3000);
       
       this.reset();
+    });
+    
+    // Rastrear tempo na página (engajamento)
+    let pageViewTime = 0;
+    const startTime = new Date();
+    
+    window.addEventListener('beforeunload', function() {
+      const endTime = new Date();
+      const timeSpent = Math.round((endTime - startTime) / 1000); // em segundos
+      
+      if (timeSpent > 10) { // Só rastrear se passou mais de 10 segundos
+        trackTikTokEvent('StayTime', {
+          time_spent: timeSpent,
+          content_type: 'landing_page'
+        });
+      }
     });
     
     // Fechar modal
