@@ -19,7 +19,7 @@ function updateUrgencyCounter() {
   const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
   
   document.querySelector('.urgency-counter').innerHTML = 
-    `🔥 OFERTA ESPECIAL: Frete Grátis + 10% de Desconto - Apenas ${hours}h ${minutes}m restantes!`;
+    `🔥 Lote Exclusivo liberado: Frete Grátis e 10% OFF - Expira em ${hours}h ${minutes}m!`;
 }
 
 // Atualizar a cada minuto
@@ -62,13 +62,69 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Tracking de cliques nos produtos (para Google Analytics)
+// Tracking de cliques nos produtos (TikTok Pixel e Microsoft Clarity)
 document.querySelectorAll('.product a').forEach(button => {
   button.addEventListener('click', function() {
-    // Aqui você pode adicionar eventos do Google Analytics
-    console.log('Produto clicado:', this.closest('.product').querySelector('.product-title').textContent);
+    const productName = this.closest('.product').querySelector('.product-title').textContent;
+    const productId = this.getAttribute('data-product-id');
+    
+    // Dispara evento no TikTok Pixel
+    if (typeof ttq !== 'undefined') {
+      ttq.track('AddToCart', {
+        content_id: productId,
+        content_name: productName,
+        content_type: 'product',
+        quantity: 1
+      });
+    }
+
+    // Marca no Microsoft Clarity se estiver carregado
+    if (typeof clarity === 'function') {
+      clarity("set", "ButtonClicked", productName);
+    }
   });
 });
+
+// --- Rastreamento Comportamental Profundo ---
+
+// 1. Scroll Depth Tracking (Rastrear até onde o usuário rolou a página)
+let scrollMarks = { 25: false, 50: false, 75: false, 100: false };
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+  [25, 50, 75, 100].forEach(mark => {
+    if (scrollPercent >= mark && !scrollMarks[mark]) {
+      scrollMarks[mark] = true;
+      if (typeof ttq !== 'undefined') {
+        ttq.track('ScrollDepth', { depth: `${mark}%` });
+      }
+      if (typeof clarity === 'function') {
+        clarity("set", "ScrollDepth", `${mark}%`);
+      }
+    }
+  });
+});
+
+// 2. Time on Page Tracking (Rastrear quem fica muito tempo na página)
+let timeSpent = 0;
+const timeInterval = setInterval(() => {
+  timeSpent += 10;
+  if (timeSpent === 30) {
+    if (typeof ttq !== 'undefined') {
+      ttq.track('TimeOnSite_30s');
+    }
+  }
+  if (timeSpent === 60) {
+    if (typeof ttq !== 'undefined') {
+      ttq.track('TimeOnSite_60s');
+    }
+    clearInterval(timeInterval); // Para de contar após 60s para economizar requisições
+  }
+}, 10000); // Checa a cada 10 segundos
+
 
 // Animação de entrada para elementos
 const observerOptions = {
