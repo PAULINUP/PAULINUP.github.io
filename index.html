@@ -10,13 +10,7 @@
       w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
       ttq.load('D3TFTPJC77U1N95E926G');
       ttq.page();
-      
-      // Evento de Visualização de Conteúdo
-      ttq.track('ViewContent', {
-        content_id: 'impontuality_landing_page',
-        content_type: 'product',
-        content_category: 'fashion_apparel'
-      });
+      ttq.track('ViewContent', { content_id: 'impontuality_landing_page', content_type: 'product', content_category: 'fashion_apparel' });
     }(window, document, 'ttq');
   </script>
   <!-- End TikTok Pixel Code -->
@@ -31,815 +25,130 @@
   </script>
   <!-- End Microsoft Clarity -->
 
-  <!-- Título Otimizado para SEO -->
   <title>Impontuality | Camisetas de Música Eletrônica - Moda e Movimento</title>
-  
-  <!-- Meta Description Otimizada -->
-  <meta name="description" content="Camisetas Impontuality: Vista o som, sinta o ritmo. Coleção exclusiva que une moda e música eletrônica. Frete Grátis + 10% OFF">
-  
-  <!-- Palavras-chave -->
-  <meta name="keywords" content="impontuality, camisetas música eletrônica, moda EDM, roupas festival, camisetas personalizadas, música eletrônica, loja online">
-  <meta name="author" content="Impontuality">
-  <meta name="robots" content="index, follow">
-  
-  <!-- Open Graph para Redes Sociais -->
-  <meta property="og:title" content="Impontuality | Camisetas de Música Eletrônica">
-  <meta property="og:description" content="Vista o som. Sinta o ritmo. Seja Impontuality. Coleção exclusiva de camisetas.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://seudominio.com">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80">
-  <meta property="og:site_name" content="Impontuality">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Impontuality | Camisetas de Música Eletrônica">
-  <meta name="twitter:description" content="Vista o som. Sinta o ritmo. Seja Impontuality.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80">
-  
-  <!-- Favicon -->
+  <meta name="description" content="Camisetas Impontuality: Vista o som, sinta o ritmo. Coleção exclusiva que une moda e música eletrônica.">
   <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
   
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
-  <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #000;
-      color: #fff;
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
-    
-    /* Variáveis CSS para consistência */
-    :root {
-      --primary: #0066ff;
-      --secondary: #a200ff;
-      --accent: #00ffff;
-      --text-light: #aaa;
-      --diamond-glow: rgba(0, 255, 255, 0.8);
-    }
-    
-    /* Header aprimorado */
-    header {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
-      display: flex; justify-content: space-between; align-items: center;
-      background: rgba(0,0,0,0.9);
-      backdrop-filter: blur(10px);
-      padding: 15px 40px;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      transition: all 0.3s ease;
-    }
-    
-    header.scrolled {
-      padding: 10px 40px;
-      background: rgba(0,0,0,0.95);
-    }
-    
-    .logo-diamond {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 900;
-      position: relative;
-      background: linear-gradient(135deg, #00ffff, #a200ff, #0066ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 20px var(--diamond-glow);
-      animation: diamond-shine 3s ease-in-out infinite;
-      text-decoration: none;
-    }
-    
-    @keyframes diamond-shine {
-      0%, 100% { 
-        text-shadow: 0 0 20px var(--diamond-glow), 0 0 40px rgba(0, 255, 255, 0.5);
-        filter: brightness(1);
-      }
-      50% { 
-        text-shadow: 0 0 30px var(--diamond-glow), 0 0 60px rgba(0, 255, 255, 0.8);
-        filter: brightness(1.2);
-      }
-    }
-    
-    .logo-diamond::before {
-      content: '💎';
-      margin-right: 8px;
-      font-size: 1.4rem;
-      animation: spin 4s linear infinite;
-    }
-    
-    @keyframes spin {
-      0% { transform: rotate(0deg) scale(1); }
-      50% { transform: rotate(180deg) scale(1.1); }
-      100% { transform: rotate(360deg) scale(1); }
-    }
-    
-    nav a {
-      margin-left: 25px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
-      position: relative;
-    }
-    
-    nav a:after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -5px;
-      left: 0;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      transition: width 0.3s ease;
-    }
-    
-    nav a:hover { color: var(--accent); }
-    nav a:hover:after { width: 100%; }
-    
-    /* Contador de urgência */
-    .urgency-counter {
-      background: linear-gradient(90deg, #ff0066, #ff3300);
-      color: white;
-      text-align: center;
-      padding: 12px;
-      font-size: 0.9rem;
-      font-weight: bold;
-      position: relative;
-      z-index: 999;
-    }
-    
-    /* Hero section com mais impacto */
-    .hero {
-      height: 100vh;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(162, 0, 255, 0.15) 0%, transparent 50%),
-        linear-gradient(to bottom, #000 60%, #050505);
-      display: flex; 
-      flex-direction: column; 
-      justify-content: center; 
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero:before {
-      content: '';
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 0%, transparent 70%);
-      animation: pulse 15s infinite linear;
-      z-index: 0;
-    }
-    
-    @keyframes pulse {
-      0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-      50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.3; }
-      100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-    }
-    
-    .hero-logo {
-      font-size: 5rem;
-      margin-bottom: 20px;
-      display: block;
-      animation: float 6s ease-in-out infinite;
-      filter: drop-shadow(0 0 20px var(--diamond-glow));
-    }
-    
-    @keyframes float {
-      0% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(5deg); }
-      100% { transform: translateY(0px) rotate(0deg); }
-    }
-    
-    .hero h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 20px rgba(0, 102, 255, 0.3);
-    }
-    
-    .hero p {
-      font-size: 1.2rem;
-      color: var(--text-light);
-      margin-bottom: 30px;
-      max-width: 600px;
-    }
-    
-    /* Botões aprimorados */
-    .btn {
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      padding: 14px 32px;
-      border-radius: 50px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 10px;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-      display: inline-block;
-      box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
-      border: none;
-      cursor: pointer;
-    }
-    
-    .btn:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: all 0.5s;
-    }
-    
-    .btn:hover { 
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 102, 255, 0.6);
-    }
-    
-    .btn:hover:before {
-      left: 100%;
-    }
-    
-    .btn-secondary {
-      background: transparent;
-      border: 2px solid var(--primary);
-      box-shadow: none;
-    }
-    
-    .btn-secondary:hover {
-      background: rgba(0, 102, 255, 0.1);
-    }
-    
-    /* Seção de música com Spotify */
-    .music {
-      background-color: #050505;
-      padding: 100px 20px;
-      text-align: center;
-      position: relative;
-    }
-    
-    .music:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--primary), transparent);
-    }
-    
-    .music h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      position: relative;
-      display: inline-block;
-    }
-    
-    .music h2:after {
-      content: '';
-      position: absolute;
-      width: 50%;
-      height: 3px;
-      bottom: -10px;
-      left: 25%;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-    }
-    
-    .spotify-player {
-      width: 100%;
-      max-width: 800px;
-      height: 380px;
-      border: none;
-      border-radius: 12px;
-      margin: 30px auto;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      background: #000;
-    }
-    
-    .music p {
-      max-width: 600px;
-      margin: 30px auto;
-      color: #bbb;
-      line-height: 1.6;
-      font-size: 1.1rem;
-    }
-    
-    /* Seção de produtos aprimorada */
-    .store {
-      padding: 100px 20px;
-      background: radial-gradient(circle at center, #0a0a0a, #000);
-      text-align: center;
-      position: relative;
-    }
-    
-    .store:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--secondary), transparent);
-    }
-    
-    .store h2 {
-      font-family: 'Orbitron', sans-serif;
-      margin-bottom: 50px;
-      font-size: 2.2rem;
-      position: relative;
-      display: inline-block;
-    }
-    
-    .store h2:after {
-      content: '';
-      position: absolute;
-      width: 50%;
-      height: 3px;
-      bottom: -10px;
-      left: 25%;
-      background: linear-gradient(90deg, var(--secondary), var(--primary));
-    }
-    
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .product {
-      background: #111;
-      border-radius: 20px;
-      overflow: hidden;
-      width: 100%;
-      max-width: 350px;
-      transition: 0.4s;
-      position: relative;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-    
-    .product:hover { 
-      transform: translateY(-10px); 
-      box-shadow: 0 15px 30px rgba(0, 102, 255, 0.3); 
-      border-color: rgba(0, 102, 255, 0.3);
-    }
-    
-    .product-badge {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: linear-gradient(90deg, #ff0066, #ff3300);
-      color: white;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: bold;
-      z-index: 2;
-    }
-    
-    .product img { 
-      width: 100%; 
-      height: 350px;
-      object-fit: cover;
-      transition: all 0.5s;
-    }
-    
-    .product:hover img {
-      transform: scale(1.05);
-    }
-    
-    .product-info {
-      padding: 20px;
-    }
-    
-    .product-title {
-      font-weight: bold;
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-    }
-    
-    .product-price {
-      color: var(--accent);
-      font-weight: bold;
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-    }
-    
-    .product-price .old-price {
-      text-decoration: line-through;
-      color: var(--text-light);
-      font-size: 0.9rem;
-      margin-right: 10px;
-    }
-    
-    .product a {
-      display: block;
-      padding: 14px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s;
-      text-align: center;
-    }
-    
-    .product a:hover {
-      background: linear-gradient(90deg, var(--secondary), var(--primary));
-      letter-spacing: 1px;
-    }
-    
-    /* Seção de manifesto aprimorada */
-    .manifesto {
-      padding: 100px 30px;
-      text-align: center;
-      background: #020202;
-      position: relative;
-    }
-    
-    .manifesto:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    }
-    
-    .manifesto p {
-      font-size: 1.3rem;
-      color: #ccc;
-      line-height: 1.8;
-      max-width: 700px;
-      margin: 0 auto;
-      position: relative;
-    }
-    
-    .manifesto p:before, .manifesto p:after {
-      content: '"';
-      font-size: 3rem;
-      color: var(--primary);
-      position: absolute;
-      opacity: 0.5;
-    }
-    
-    .manifesto p:before {
-      top: -20px;
-      left: -30px;
-    }
-    
-    .manifesto p:after {
-      bottom: -40px;
-      right: -30px;
-    }
-    
-    /* Seção de depoimentos */
-    .testimonials {
-      padding: 80px 20px;
-      background: #050505;
-      text-align: center;
-    }
-    
-    .testimonials h2 {
-      font-family: 'Orbitron', sans-serif;
-      margin-bottom: 50px;
-      font-size: 2rem;
-    }
-    
-    .testimonial-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .testimonial {
-      background: #111;
-      border-radius: 15px;
-      padding: 25px;
-      width: 100%;
-      max-width: 350px;
-      text-align: left;
-      border-left: 3px solid var(--primary);
-    }
-    
-    .testimonial-text {
-      color: #bbb;
-      font-style: italic;
-      margin-bottom: 15px;
-      line-height: 1.6;
-    }
-    
-    .testimonial-author {
-      color: var(--accent);
-      font-weight: bold;
-    }
-    
-    /* Footer aprimorado */
-    footer {
-      background: #000;
-      border-top: 1px solid #111;
-      text-align: center;
-      padding: 40px 30px 30px;
-      font-size: 0.9rem;
-      color: #666;
-      position: relative;
-    }
-    
-    footer::after {
-      content: "";
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 100%; height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      animation: flow 4s infinite linear;
-    }
-    
-    @keyframes flow {
-      0% {background-position: 0 0;}
-      100% {background-position: 1000px 0;}
-    }
-    
-    .socials {
-      margin-bottom: 20px;
-    }
-    
-    .socials a {
-      color: #fff;
-      margin: 0 10px;
-      font-size: 1.2rem;
-      text-decoration: none;
-      transition: all 0.3s;
-      display: inline-block;
-    }
-    
-    .socials a:hover {
-      color: var(--accent);
-      transform: translateY(-3px);
-    }
-    
-    .newsletter {
-      max-width: 500px;
-      margin: 30px auto;
-    }
-    
-    .newsletter h3 {
-      margin-bottom: 15px;
-      color: var(--accent);
-    }
-    
-    .newsletter-form {
-      display: flex;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    
-    .newsletter-form input {
-      flex: 1;
-      padding: 12px 15px;
-      border: none;
-      border-radius: 50px 0 0 50px;
-      background: #111;
-      color: white;
-      outline: none;
-    }
-    
-    .newsletter-form button {
-      padding: 12px 20px;
-      border: none;
-      border-radius: 0 50px 50px 0;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    
-    .newsletter-form button:hover {
-      background: linear-gradient(90deg, var(--secondary), var(--primary));
-    }
-    
-    /* Modal para e-mail salvo */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .modal-content {
-      background: #111;
-      padding: 30px;
-      border-radius: 15px;
-      text-align: center;
-      max-width: 400px;
-      width: 90%;
-      border: 1px solid var(--primary);
-    }
-    
-    .modal h3 {
-      color: var(--accent);
-      margin-bottom: 15px;
-    }
-    
-    .modal-close {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 50px;
-      cursor: pointer;
-      margin-top: 15px;
-    }
-    
-    /* Responsividade */
-    @media (max-width: 768px) {
-      .hero h1 {font-size: 2rem;}
-      .products {flex-direction: column; align-items: center;}
-      nav {display: none;}
-      .hero p {font-size: 1rem;}
-      .testimonial-cards {flex-direction: column; align-items: center;}
-      .newsletter-form {flex-direction: column;}
-      .newsletter-form input, .newsletter-form button {border-radius: 50px; margin: 5px 0;}
-      header {padding: 15px 20px;}
-      .spotify-player {height: 352px;}
-      .hero-logo {font-size: 4rem;}
-      .logo-diamond {font-size: 1.5rem;}
-    }
-    
-    @media (max-width: 480px) {
-      .hero h1 {font-size: 1.8rem;}
-      .spotify-player {height: 300px;}
-      .product {max-width: 100%;}
-      .hero-logo {font-size: 3rem;}
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Fundo Animado (Animated Mesh Gradient) -->
+  <div class="mesh-bg">
+    <div class="mesh-blob primary"></div>
+    <div class="mesh-blob secondary"></div>
+    <div class="mesh-blob accent"></div>
+  </div>
+
   <div class="urgency-counter">
-    🔥 Lote Exclusivo liberado: Frete Grátis e 10% OFF na sua primeira experiência Impontuality hoje!
+    <strong>🔥 Lote Exclusivo liberado:</strong> Frete Grátis e 10% OFF na sua primeira experiência Impontuality hoje!
   </div>
 
   <header id="main-header">
-    <!-- Logo Diamante -->
     <a href="#home" class="logo-diamond">IMPONTUALITY</a>
     <nav>
       <a href="#home">Home</a>
-      <a href="#music">Música</a>
-      <a href="#store">Loja</a>
-      <a href="#testimonials">Depoimentos</a>
-      <a href="#contact">Contato</a>
+      <a href="#store">Coleção</a>
+      <a href="#music">Trilha Sonora</a>
+      <a href="#contact">Manifesto</a>
     </nav>
   </header>
 
   <section class="hero" id="home">
     <div class="hero-content">
-      <!-- Logo Diamante Hero -->
       <div class="hero-logo">💎</div>
       <h1>A batida não para. O movimento é você.</h1>
       <p>Você sabe exatamente qual é a sensação quando o grave bate e a pista inteira se conecta. A Impontuality não vende apenas roupas; nós materializamos essa energia. Sinta-se representado.</p>
-      <div>
-        <a href="#store" class="btn" id="cta-hero">Garantir a Minha Vibe</a>
-        <a href="#store" class="btn btn-secondary" id="cta-gift" style="margin-left: 10px;">Presentear Alguém</a>
+      <div class="btn-group">
+        <a href="#store" class="btn btn-primary magnetic" id="cta-hero">Garantir a Minha Vibe</a>
+        <a href="#store" class="btn btn-secondary magnetic" id="cta-gift">Presentear Alguém</a>
       </div>
     </div>
   </section>
 
-  <section class="music" id="music">
-    <h2>Nossa Trilha Sonora</h2>
-    <p>
-      Cada estampa é desenhada para quem vive a cultura eletrônica.  
-      Do techno hipnótico ao house envolvente. Coloque os fones, dê o play na nossa playlist oficial e sinta a energia antes mesmo de vestir.
+  <section class="section-padding" id="store">
+    <h2 class="section-title reveal">Coleção Exclusiva</h2>
+    <p class="section-subtitle reveal">Vista a batida. Sinta a energia. Seja parte do movimento.</p>
+    
+    <div class="products">
+      <!-- Produto 1 -->
+      <div class="product-card reveal">
+        <div class="product-badge">Mais Vendida</div>
+        <div class="product-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="DJ Equipment - Camiseta Impontuality">
+        </div>
+        <div class="product-info">
+          <div class="product-title">Impontuality Classic</div>
+          <div class="product-price">
+            <span class="old-price">R$ 79,90</span>
+            <span>R$ 69,90</span>
+          </div>
+          <a href="https://umapenca.com/impontuality/camiseta/impontuality-298643.html" target="_blank" class="product-buy magnetic" data-product-id="impontuality-298643" data-product-name="Camiseta Impontuality">Vestir o Movimento</a>
+        </div>
+      </div>
+      
+      <!-- Produto 2 -->
+      <div class="product-card reveal" style="transition-delay: 0.1s;">
+        <div class="product-badge">Lançamento</div>
+        <div class="product-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Music Festival - Camiseta The Sun">
+        </div>
+        <div class="product-info">
+          <div class="product-title">The Sun</div>
+          <div class="product-price">
+            <span class="old-price">R$ 79,90</span>
+            <span>R$ 69,90</span>
+          </div>
+          <a href="https://umapenca.com/impontuality/camiseta/the-sun-298645.html" target="_blank" class="product-buy magnetic" data-product-id="the-sun-298645" data-product-name="Camiseta The Sun">Vestir o Movimento</a>
+        </div>
+      </div>
+      
+      <!-- Produto 3 -->
+      <div class="product-card reveal" style="transition-delay: 0.2s;">
+        <div class="product-badge">Edição Limitada</div>
+        <div class="product-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Night Club - Camiseta Dream of Tomorrow">
+        </div>
+        <div class="product-info">
+          <div class="product-title">Dream of Tomorrow</div>
+          <div class="product-price">
+            <span class="old-price">R$ 79,90</span>
+            <span>R$ 69,90</span>
+          </div>
+          <a href="https://umapenca.com/impontuality/camiseta/dream-of-tomorrow-298647.html" target="_blank" class="product-buy magnetic" data-product-id="dream-of-tomorrow-298647" data-product-name="Camiseta Dream of Tomorrow">Vestir o Movimento</a>
+        </div>
+      </div>
+
+      <!-- Produto 4 -->
+      <div class="product-card reveal" style="transition-delay: 0.3s;">
+        <div class="product-badge">Novidade</div>
+        <div class="product-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Audio Mixer - Camiseta Drive">
+        </div>
+        <div class="product-info">
+          <div class="product-title">Drive</div>
+          <div class="product-price">
+            <span class="old-price">R$ 79,90</span>
+            <span>R$ 69,90</span>
+          </div>
+          <a href="https://umapenca.com/impontuality/camiseta/drive-298649.html" target="_blank" class="product-buy magnetic" data-product-id="drive-298649" data-product-name="Camiseta Drive">Vestir o Movimento</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" id="music">
+    <h2 class="section-title reveal">Nossa Trilha Sonora</h2>
+    <p class="section-subtitle reveal">
+      Cada estampa é desenhada para quem vive a cultura eletrônica. Do techno hipnótico ao house envolvente. Coloque os fones, dê o play na nossa playlist oficial e sinta a energia antes mesmo de vestir.
     </p>
     
-    <!-- Player do Spotify -->
-    <iframe class="spotify-player" src="https://open.spotify.com/embed/playlist/4vnd8wPeEkenSPN5QVUMRk?utm_source=generator&theme=0" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    
-    <a href="https://open.spotify.com/playlist/4vnd8wPeEkenSPN5QVUMRk?si=8ziLumFgQ-6yDQvqu3OX_w" class="btn" target="_blank" id="cta-spotify">Abrir no Spotify</a>
-  </section>
-
-  <section class="store" id="store">
-    <h2>Coleção Exclusiva Impontuality</h2>
-    <p style="max-width: 600px; margin: 0 auto 40px; color: #bbb;">Vista a batida. Sinta a energia. Seja parte do movimento.</p>
-    <div class="products">
-      <!-- PRODUTO 1 - Imagens de eletrônica realistas -->
-      <div class="product">
-        <div class="product-badge">Mais Vendida</div>
-        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="DJ Equipment - Camiseta Impontuality">
-        <div class="product-info">
-          <div class="product-title">Camiseta Impontuality Classic</div>
-          <div class="product-price">
-            <span class="old-price">R$ 79,90</span>
-            <span>R$ 69,90</span>
-          </div>
-        </div>
-        <a href="https://umapenca.com/impontuality/camiseta/impontuality-298643.html" target="_blank" class="product-buy" data-product-id="impontuality-298643" data-product-name="Camiseta Impontuality">Vestir o Movimento</a>
-      </div>
-      
-      <!-- PRODUTO 2 -->
-      <div class="product">
-        <div class="product-badge">Lançamento</div>
-        <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Music Festival - Camiseta The Sun">
-        <div class="product-info">
-          <div class="product-title">Camiseta The Sun</div>
-          <div class="product-price">
-            <span class="old-price">R$ 79,90</span>
-            <span>R$ 69,90</span>
-          </div>
-        </div>
-        <a href="https://umapenca.com/impontuality/camiseta/the-sun-298645.html" target="_blank" class="product-buy" data-product-id="the-sun-298645" data-product-name="Camiseta The Sun">Vestir o Movimento</a>
-      </div>
-      
-      <!-- PRODUTO 3 -->
-      <div class="product">
-        <div class="product-badge">Edição Limitada</div>
-        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Night Club - Camiseta Dream of Tomorrow">
-        <div class="product-info">
-          <div class="product-title">Camiseta Dream of Tomorrow</div>
-          <div class="product-price">
-            <span class="old-price">R$ 79,90</span>
-            <span>R$ 69,90</span>
-          </div>
-        </div>
-        <a href="https://umapenca.com/impontuality/camiseta/dream-of-tomorrow-298647.html" target="_blank" class="product-buy" data-product-id="dream-of-tomorrow-298647" data-product-name="Camiseta Dream of Tomorrow">Vestir o Movimento</a>
-      </div>
-
-      <!-- PRODUTO 4 -->
-      <div class="product">
-        <div class="product-badge">Novidade</div>
-        <img src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Audio Mixer - Camiseta Drive">
-        <div class="product-info">
-          <div class="product-title">Camiseta Drive</div>
-          <div class="product-price">
-            <span class="old-price">R$ 79,90</span>
-            <span>R$ 69,90</span>
-          </div>
-        </div>
-        <a href="https://umapenca.com/impontuality/camiseta/drive-298649.html" target="_blank" class="product-buy" data-product-id="drive-298649" data-product-name="Camiseta Drive">Vestir o Movimento</a>
-      </div>
+    <div class="spotify-container reveal">
+      <iframe class="spotify-player" src="https://open.spotify.com/embed/playlist/4vnd8wPeEkenSPN5QVUMRk?utm_source=generator&theme=0" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </section>
 
-  <section class="testimonials" id="testimonials">
-    <h2>Quem Usa, Recomenda</h2>
-    <div class="testimonial-cards">
-      <div class="testimonial">
-        <div class="testimonial-text">
-          "Comprei a camiseta da Impontuality e não paro de receber elogios. A qualidade é incrível e o design transmite perfeitamente a energia da música eletrônica."
-        </div>
-        <div class="testimonial-author">- Carlos, DJ</div>
-      </div>
-      <div class="testimonial">
-        <div class="testimonial-text">
-          "Mais do que uma camiseta, é uma experiência. Uso nos festivais e sempre conecto com pessoas que vibram na mesma frequência. Recomendo demais!"
-        </div>
-        <div class="testimonial-author">- Marina, Produtora Musical</div>
-      </div>
-      <div class="testimonial">
-        <div class="testimonial-text">
-          "A combinação perfeita entre conforto e estilo. A estampa não desbota mesmo depois de várias lavagens. Já comprei três modelos diferentes!"
-        </div>
-        <div class="testimonial-author">- Rafael, Fã de EDM</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="manifesto">
+  <section class="section-padding manifesto reveal">
     <p>
       Nós não fazemos roupas, nós vestimos o movimento.<br>
       A Impontuality é feita para quem sente a música além das caixas de som.<br>
@@ -847,219 +156,40 @@
     </p>
   </section>
 
+  <section class="section-padding">
+    <div class="testimonial-cards">
+      <div class="testimonial reveal">
+        <p class="testimonial-text">O caimento é perfeito e a estampa brilha na luz do palco. Quem vive a noite sabe que a roupa certa muda tudo.</p>
+        <div class="testimonial-author">- Lucas T.</div>
+      </div>
+      <div class="testimonial reveal" style="transition-delay: 0.15s;">
+        <p class="testimonial-text">Dei de presente pro meu namorado e ele não tira mais. A vibe da marca é inexplicável.</p>
+        <div class="testimonial-author">- Mariana S.</div>
+      </div>
+      <div class="testimonial reveal" style="transition-delay: 0.3s;">
+        <p class="testimonial-text">Quando chega nos festivais com essa camiseta, você já sabe quem é da mesma tribo. Qualidade absurda.</p>
+        <div class="testimonial-author">- Rafael M.</div>
+      </div>
+    </div>
+  </section>
+
   <footer id="contact">
-    <div class="newsletter">
-      <h3>Junte-se ao Movimento</h3>
-      <p style="color: #aaa; margin-bottom: 15px;">Receba novidades, lançamentos exclusivos e descontos especiais.</p>
-      <form class="newsletter-form" id="newsletter-form">
-        <input type="email" placeholder="Seu melhor e-mail" required id="email-input">
-        <button type="submit">Inscrever</button>
+    <div class="newsletter reveal">
+      <h3 style="color: #fff; margin-bottom: 15px; font-family: 'Clash Display', sans-serif;">Junte-se ao Movimento</h3>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Seu melhor e-mail" required>
+        <button type="submit">Entrar</button>
       </form>
     </div>
     
-    <div class="socials">
-      <a href="https://open.spotify.com/artist/3XF6F5m4aJmdBggM3QWgtg" target="_blank">Spotify</a> |
-      <a href="https://www.tiktok.com/@impontuality" target="_blank">TikTok</a> |
-      <a href="https://www.instagram.com/impontuality" target="_blank">Instagram</a> |
-      <a href="https://www.youtube.com/@impontuality" target="_blank">YouTube</a>
+    <div class="socials reveal">
+      <a href="#">Instagram</a>
+      <a href="#">Spotify</a>
+      <a href="#">TikTok</a>
     </div>
-    <p>© 2025 Impontuality. Todos os direitos reservados.</p>
+    <p style="margin-top: 30px; font-size: 0.8rem; color: #555;">&copy; 2026 Impontuality. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Modal para e-mail salvo -->
-  <div class="modal" id="email-modal">
-    <div class="modal-content">
-      <h3>Inscrição Confirmada!</h3>
-      <p>Obrigado por se juntar ao movimento Impontuality. Em breve você receberá nossas novidades.</p>
-      <button class="modal-close" id="modal-close">Fechar</button>
-    </div>
-  </div>
-
-  <!-- JavaScript Corrigido e Aprimorado com TikTok Events -->
-  <script>
-    // Efeito de scroll no header
-    window.addEventListener('scroll', function() {
-      const header = document.getElementById('main-header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-    
-    // Atualizar contador de urgência
-    function updateUrgencyCounter() {
-      const now = new Date();
-      const endOfDay = new Date();
-      endOfDay.setHours(23, 59, 59, 999);
-      
-      const timeLeft = endOfDay - now;
-      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      
-      document.querySelector('.urgency-counter').innerHTML = 
-        `🔥 OFERTA ESPECIAL: Frete Grátis + 10% de Desconto - Apenas ${hours}h ${minutes}m restantes!`;
-    }
-    
-    // Atualizar a cada minuto
-    updateUrgencyCounter();
-    setInterval(updateUrgencyCounter, 60000);
-    
-    // TikTok Events - Funções de rastreamento
-    function trackTikTokEvent(event, parameters = {}) {
-      if (typeof ttq !== 'undefined') {
-        ttq.track(event, parameters);
-        console.log(`TikTok Event: ${event}`, parameters);
-      }
-    }
-    
-    // Rastrear visualização de produtos
-    document.addEventListener('DOMContentLoaded', function() {
-      // Rastrear visualização de página de produtos
-      trackTikTokEvent('ViewContent', {
-        content_id: 'impontuality_collection',
-        content_type: 'product_group',
-        content_category: 'fashion_apparel'
-      });
-    });
-    
-    // Rastrear cliques nos botões CTA principais
-    document.getElementById('cta-hero').addEventListener('click', function() {
-      trackTikTokEvent('ClickButton', {
-        button_id: 'hero_cta',
-        button_text: 'Ver Coleção - Oferta Especial',
-        content_type: 'product'
-      });
-    });
-    
-    document.getElementById('cta-music').addEventListener('click', function() {
-      trackTikTokEvent('ClickButton', {
-        button_id: 'music_cta',
-        button_text: 'Ouvir o Som',
-        content_type: 'music'
-      });
-    });
-    
-    document.getElementById('cta-spotify').addEventListener('click', function() {
-      trackTikTokEvent('ClickButton', {
-        button_id: 'spotify_cta',
-        button_text: 'Abrir no Spotify',
-        content_type: 'music'
-      });
-    });
-    
-    // Rastrear cliques em produtos específicos
-    document.querySelectorAll('.product-buy').forEach(button => {
-      button.addEventListener('click', function() {
-        const productId = this.getAttribute('data-product-id');
-        const productName = this.getAttribute('data-product-name');
-        
-        trackTikTokEvent('AddToCart', {
-          content_id: productId,
-          content_name: productName,
-          content_type: 'product',
-          quantity: 1,
-          price: 69.90,
-          currency: 'BRL'
-        });
-        
-        // Rastrear início de checkout
-        trackTikTokEvent('InitiateCheckout', {
-          content_id: productId,
-          content_name: productName,
-          contents: [{
-            id: productId,
-            name: productName,
-            quantity: 1,
-            price: 69.90
-          }],
-          currency: 'BRL',
-          value: 69.90
-        });
-      });
-    });
-    
-    // Newsletter form handler - COM EVENTO TIKTOK
-    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = document.getElementById('email-input').value;
-      
-      // Salvar no localStorage (alternativa sem banco de dados)
-      let emails = JSON.parse(localStorage.getItem('impontuality_emails') || '[]');
-      emails.push({
-        email: email,
-        date: new Date().toISOString()
-      });
-      localStorage.setItem('impontuality_emails', JSON.stringify(emails));
-      
-      // TikTok Event - Lead/Subscribe
-      trackTikTokEvent('CompleteRegistration', {
-        content_id: 'newsletter_subscription',
-        content_type: 'lead',
-        email: email, // O TikTok hash automaticamente emails para privacidade
-        currency: 'BRL',
-        value: 0
-      });
-      
-      // Feedback visual
-      const button = this.querySelector('button');
-      const originalText = button.textContent;
-      button.textContent = 'Inscrito! ✓';
-      button.style.background = 'linear-gradient(90deg, #00cc00, #00aa00)';
-      
-      // Mostrar modal de confirmação
-      document.getElementById('email-modal').style.display = 'flex';
-      
-      setTimeout(() => {
-        button.textContent = originalText;
-        button.style.background = 'linear-gradient(90deg, var(--primary), var(--secondary))';
-      }, 3000);
-      
-      this.reset();
-    });
-    
-    // Rastrear tempo na página (engajamento)
-    let pageViewTime = 0;
-    const startTime = new Date();
-    
-    window.addEventListener('beforeunload', function() {
-      const endTime = new Date();
-      const timeSpent = Math.round((endTime - startTime) / 1000); // em segundos
-      
-      if (timeSpent > 10) { // Só rastrear se passou mais de 10 segundos
-        trackTikTokEvent('StayTime', {
-          time_spent: timeSpent,
-          content_type: 'landing_page'
-        });
-      }
-    });
-    
-    // Fechar modal
-    document.getElementById('modal-close').addEventListener('click', function() {
-      document.getElementById('email-modal').style.display = 'none';
-    });
-    
-    // Smooth scroll para âncoras
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Contador de visitas (opcional)
-    if (!localStorage.getItem('visit_count')) {
-      localStorage.setItem('visit_count', '1');
-    } else {
-      let count = parseInt(localStorage.getItem('visit_count'));
-      localStorage.setItem('visit_count', (count + 1).toString());
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

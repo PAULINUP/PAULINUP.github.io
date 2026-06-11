@@ -1,4 +1,6 @@
+// ==========================================================
 // Efeito de scroll no header
+// ==========================================================
 window.addEventListener('scroll', function() {
   const header = document.getElementById('main-header');
   if (window.scrollY > 50) {
@@ -8,47 +10,9 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// Atualizar contador de urgência
-function updateUrgencyCounter() {
-  const now = new Date();
-  const endOfDay = new Date();
-  endOfDay.setHours(23, 59, 59, 999);
-  
-  const timeLeft = endOfDay - now;
-  const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-  
-  document.querySelector('.urgency-counter').innerHTML = 
-    `🔥 Lote Exclusivo liberado: Frete Grátis e 10% OFF - Expira em ${hours}h ${minutes}m!`;
-}
-
-// Atualizar a cada minuto
-updateUrgencyCounter();
-setInterval(updateUrgencyCounter, 60000);
-
-// Newsletter form handler
-document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const email = this.querySelector('input[type="email"]').value;
-  
-  // Aqui você integraria com seu serviço de email marketing
-  // Exemplo: Mailchimp, ConvertKit, etc.
-  
-  // Feedback visual
-  const button = this.querySelector('button');
-  const originalText = button.textContent;
-  button.textContent = 'Inscrito! ✓';
-  button.style.background = 'linear-gradient(90deg, #00cc00, #00aa00)';
-  
-  setTimeout(() => {
-    button.textContent = originalText;
-    button.style.background = 'linear-gradient(90deg, var(--primary), var(--secondary))';
-  }, 3000);
-  
-  this.reset();
-});
-
+// ==========================================================
 // Smooth scroll para âncoras
+// ==========================================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -62,13 +26,48 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Tracking de cliques nos produtos (TikTok Pixel e Microsoft Clarity)
-document.querySelectorAll('.product a').forEach(button => {
+// ==========================================================
+// Botões Magnéticos (Efeito premium)
+// ==========================================================
+document.querySelectorAll('.magnetic').forEach(btn => {
+  btn.addEventListener('mousemove', function(e) {
+    const position = btn.getBoundingClientRect();
+    const x = e.pageX - position.left - position.width / 2;
+    const y = e.pageY - position.top - position.height / 2;
+    
+    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.5}px)`;
+  });
+
+  btn.addEventListener('mouseout', function(e) {
+    btn.style.transform = 'translate(0px, 0px)';
+  });
+});
+
+// ==========================================================
+// Reveal Elements on Scroll
+// ==========================================================
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => {
+  revealObserver.observe(el);
+});
+
+// ==========================================================
+// Tracking & Conversão
+// ==========================================================
+
+// 1. Tracking de Produtos
+document.querySelectorAll('.product-buy').forEach(button => {
   button.addEventListener('click', function() {
-    const productName = this.closest('.product').querySelector('.product-title').textContent;
+    const productName = this.getAttribute('data-product-name');
     const productId = this.getAttribute('data-product-id');
     
-    // Dispara evento no TikTok Pixel
     if (typeof ttq !== 'undefined') {
       ttq.track('AddToCart', {
         content_id: productId,
@@ -77,19 +76,14 @@ document.querySelectorAll('.product a').forEach(button => {
         quantity: 1
       });
     }
-
-    // Marca no Microsoft Clarity se estiver carregado
     if (typeof clarity === 'function') {
       clarity("set", "ButtonClicked", productName);
     }
   });
 });
 
-// --- Rastreamento Comportamental Profundo ---
-
-// 1. Scroll Depth Tracking (Rastrear até onde o usuário rolou a página)
+// 2. Scroll Depth
 let scrollMarks = { 25: false, 50: false, 75: false, 100: false };
-
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
   const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -98,53 +92,39 @@ window.addEventListener('scroll', () => {
   [25, 50, 75, 100].forEach(mark => {
     if (scrollPercent >= mark && !scrollMarks[mark]) {
       scrollMarks[mark] = true;
-      if (typeof ttq !== 'undefined') {
-        ttq.track('ScrollDepth', { depth: `${mark}%` });
-      }
-      if (typeof clarity === 'function') {
-        clarity("set", "ScrollDepth", `${mark}%`);
-      }
+      if (typeof ttq !== 'undefined') ttq.track('ScrollDepth', { depth: `${mark}%` });
+      if (typeof clarity === 'function') clarity("set", "ScrollDepth", `${mark}%`);
     }
   });
 });
 
-// 2. Time on Page Tracking (Rastrear quem fica muito tempo na página)
+// 3. Time on Page
 let timeSpent = 0;
 const timeInterval = setInterval(() => {
   timeSpent += 10;
-  if (timeSpent === 30) {
-    if (typeof ttq !== 'undefined') {
-      ttq.track('TimeOnSite_30s');
-    }
-  }
+  if (timeSpent === 30 && typeof ttq !== 'undefined') ttq.track('TimeOnSite_30s');
   if (timeSpent === 60) {
-    if (typeof ttq !== 'undefined') {
-      ttq.track('TimeOnSite_60s');
-    }
-    clearInterval(timeInterval); // Para de contar após 60s para economizar requisições
+    if (typeof ttq !== 'undefined') ttq.track('TimeOnSite_60s');
+    clearInterval(timeInterval);
   }
-}, 10000); // Checa a cada 10 segundos
+}, 10000);
 
-
-// Animação de entrada para elementos
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, observerOptions);
-
-// Observar elementos para animação
-document.querySelectorAll('.product, .testimonial').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  observer.observe(el);
+// ==========================================================
+// Newsletter Form Handler
+// ==========================================================
+document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button');
+  const oldText = btn.textContent;
+  
+  btn.textContent = 'Enviado! ✓';
+  btn.style.background = '#00cc00';
+  btn.style.color = '#fff';
+  
+  setTimeout(() => {
+    btn.textContent = oldText;
+    btn.style.background = '#fff';
+    btn.style.color = '#000';
+    this.reset();
+  }, 3000);
 });
