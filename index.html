@@ -2,20 +2,42 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- A tag de viewport é crítica para o Mobile-First -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   
+  <title>Impontuality | Official</title>
+  <meta name="description" content="A roupa oficial da sua próxima festa. Vista a energia da pista.">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+  
+  <link rel="stylesheet" href="style.css">
+
   <!-- TikTok Pixel Code -->
   <script>
     !function (w, d, t) {
       w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
       ttq.load('D3TFTPJC77U1N95E926G');
       ttq.page();
-      ttq.track('ViewContent', { content_id: 'impontuality_landing_page', content_type: 'product', content_category: 'fashion_apparel' });
     }(window, document, 'ttq');
   </script>
   <!-- End TikTok Pixel Code -->
 
-  <!-- Microsoft Clarity Placeholder -->
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    // Substitua SEU_PIXEL_META pelo ID que o usuário mandará no futuro. Deixarei preparado.
+    fbq('init', 'SEU_PIXEL_META');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Microsoft Clarity -->
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -23,171 +45,95 @@
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "x549nfzebi");
   </script>
-  <!-- End Microsoft Clarity -->
-
-  <title>Impontuality | Camisetas de Música Eletrônica - Moda e Movimento</title>
-  <meta name="description" content="Camisetas Impontuality: Vista o som, sinta o ritmo. Coleção exclusiva que une moda e música eletrônica.">
-  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
-  
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Fundo Animado (Animated Mesh Gradient) -->
-  <div class="mesh-bg">
-    <div class="mesh-blob primary"></div>
-    <div class="mesh-blob secondary"></div>
-    <div class="mesh-blob accent"></div>
-  </div>
-
-  <div class="urgency-counter">
-    <strong>🔥 Lote Exclusivo liberado:</strong> Frete Grátis e 10% OFF na sua primeira experiência Impontuality hoje!
-  </div>
-
-  <header id="main-header">
-    <a href="#home" class="logo-diamond">IMPONTUALITY</a>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#store">Coleção</a>
-      <a href="#music">Trilha Sonora</a>
-      <a href="#contact">Manifesto</a>
-    </nav>
+  <header>
+    <a href="#home" class="logo-text">Impontuality</a>
   </header>
 
   <section class="hero" id="home">
     <div class="hero-content">
-      <div class="hero-logo">💎</div>
-      <h1>A batida não para. O movimento é você.</h1>
-      <p>Você sabe exatamente qual é a sensação quando o grave bate e a pista inteira se conecta. A Impontuality não vende apenas roupas; nós materializamos essa energia. Sinta-se representado.</p>
-      <div class="btn-group">
-        <a href="#store" class="btn btn-primary magnetic" id="cta-hero">Garantir a Minha Vibe</a>
-        <a href="#store" class="btn btn-secondary magnetic" id="cta-gift">Presentear Alguém</a>
-      </div>
+      <h1>A Pista <br>Te Chama</h1>
+      <p>A roupa oficial de quem não vive pelo relógio.</p>
     </div>
   </section>
 
-  <section class="section-padding" id="store">
-    <h2 class="section-title reveal">Coleção Exclusiva</h2>
-    <p class="section-subtitle reveal">Vista a batida. Sinta a energia. Seja parte do movimento.</p>
+  <!-- Sticky CTA Mobile -->
+  <div class="sticky-cta-container" id="sticky-cta">
+    <a href="#store" class="btn">Ver Coleção</a>
+  </div>
+
+  <section class="store" id="store">
+    <h2 class="section-title">Drop 01</h2>
     
-    <div class="products">
+    <div class="product-grid">
       <!-- Produto 1 -->
-      <div class="product-card reveal">
-        <div class="product-badge">Mais Vendida</div>
-        <div class="product-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="DJ Equipment - Camiseta Impontuality">
-        </div>
+      <div class="product-card">
+        <div class="product-badge">Best Seller</div>
+        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta Original" class="product-image">
         <div class="product-info">
-          <div class="product-title">Original</div>
-          <div class="product-price">
-            <span class="old-price">R$ 79,90</span>
-            <span>R$ 69,90</span>
-          </div>
-          <a href="https://oficial.impontuality.com.br/camiseta/original-298650.html" target="_blank" class="product-buy magnetic" data-product-id="original-298650" data-product-name="Camiseta Original">Vestir o Movimento</a>
+          <div class="product-name">Original</div>
+          <div class="product-price">R$ 69,90</div>
+          <a href="https://oficial.impontuality.com.br/camiseta/original-298650.html" target="_blank" class="product-buy-btn" data-product-id="original-298650" data-product-name="Camiseta Original">Vestir Agora</a>
         </div>
       </div>
-      
+
       <!-- Produto 2 -->
-      <div class="product-card reveal" style="transition-delay: 0.1s;">
-        <div class="product-badge">Lançamento</div>
-        <div class="product-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Music Festival - Camiseta The Sun">
-        </div>
+      <div class="product-card">
+        <div class="product-badge">Novo</div>
+        <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta The Sun" class="product-image">
         <div class="product-info">
-          <div class="product-title">The Sun</div>
-          <div class="product-price">
-            <span class="old-price">R$ 79,90</span>
-            <span>R$ 69,90</span>
-          </div>
-          <a href="https://umapenca.com/impontuality/camiseta/the-sun-298645.html" target="_blank" class="product-buy magnetic" data-product-id="the-sun-298645" data-product-name="Camiseta The Sun">Vestir o Movimento</a>
+          <div class="product-name">The Sun</div>
+          <div class="product-price">R$ 69,90</div>
+          <a href="https://umapenca.com/impontuality/camiseta/the-sun-298645.html" target="_blank" class="product-buy-btn" data-product-id="the-sun-298645" data-product-name="Camiseta The Sun">Vestir Agora</a>
         </div>
       </div>
-      
+
       <!-- Produto 3 -->
-      <div class="product-card reveal" style="transition-delay: 0.2s;">
-        <div class="product-badge">Edição Limitada</div>
-        <div class="product-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Night Club - Camiseta Dream of Tomorrow">
-        </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta Dream of Tomorrow" class="product-image">
         <div class="product-info">
-          <div class="product-title">Dream of Tomorrow</div>
-          <div class="product-price">
-            <span class="old-price">R$ 79,90</span>
-            <span>R$ 69,90</span>
-          </div>
-          <a href="https://umapenca.com/impontuality/camiseta/dream-of-tomorrow-298647.html" target="_blank" class="product-buy magnetic" data-product-id="dream-of-tomorrow-298647" data-product-name="Camiseta Dream of Tomorrow">Vestir o Movimento</a>
+          <div class="product-name">Dream of Tomorrow</div>
+          <div class="product-price">R$ 69,90</div>
+          <a href="https://umapenca.com/impontuality/camiseta/dream-of-tomorrow-298647.html" target="_blank" class="product-buy-btn" data-product-id="dream-of-tomorrow-298647" data-product-name="Camiseta Dream of Tomorrow">Vestir Agora</a>
         </div>
       </div>
 
       <!-- Produto 4 -->
-      <div class="product-card reveal" style="transition-delay: 0.3s;">
-        <div class="product-badge">Novidade</div>
-        <div class="product-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Audio Mixer - Camiseta Drive">
-        </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta Drive" class="product-image">
         <div class="product-info">
-          <div class="product-title">Drive</div>
-          <div class="product-price">
-            <span class="old-price">R$ 79,90</span>
-            <span>R$ 69,90</span>
-          </div>
-          <a href="https://umapenca.com/impontuality/camiseta/drive-298649.html" target="_blank" class="product-buy magnetic" data-product-id="drive-298649" data-product-name="Camiseta Drive">Vestir o Movimento</a>
+          <div class="product-name">Drive</div>
+          <div class="product-price">R$ 69,90</div>
+          <a href="https://umapenca.com/impontuality/camiseta/drive-298649.html" target="_blank" class="product-buy-btn" data-product-id="drive-298649" data-product-name="Camiseta Drive">Vestir Agora</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section-padding" id="music">
-    <h2 class="section-title reveal">Nossa Trilha Sonora</h2>
-    <p class="section-subtitle reveal">
-      Cada estampa é desenhada para quem vive a cultura eletrônica. Do techno hipnótico ao house envolvente. Coloque os fones, dê o play na nossa playlist oficial e sinta a energia antes mesmo de vestir.
-    </p>
-    
-    <div class="spotify-container reveal">
-      <iframe class="spotify-player" src="https://open.spotify.com/embed/playlist/4vnd8wPeEkenSPN5QVUMRk?utm_source=generator&theme=0" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <section class="music-section">
+    <h2 class="section-title" style="font-size: 1.5rem; border:none;">Entre na Vibe</h2>
+    <iframe class="spotify-embed" src="https://open.spotify.com/embed/playlist/4vnd8wPeEkenSPN5QVUMRk?utm_source=generator&theme=0" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </section>
+
+  <section class="manifesto">
+    <p>"Sinta a música nas suas costas.<br>O ritmo é a nossa única regra."</p>
+  </section>
+
+  <section class="testimonials">
+    <div class="testimonial-card">
+      <p class="testimonial-text">"Chegou rápido, tecido macio demais. Usei no último festival e chamei muita atenção."</p>
+      <div class="testimonial-author">Lucas T.</div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">"A estampa é insana pessoalmente. Identidade visual absurda!"</p>
+      <div class="testimonial-author">Rafael M.</div>
     </div>
   </section>
 
-  <section class="section-padding manifesto reveal">
-    <p>
-      Nós não fazemos roupas, nós vestimos o movimento.<br>
-      A Impontuality é feita para quem sente a música além das caixas de som.<br>
-      É o presente perfeito para surpreender aquela pessoa que vive a mesma energia que você. Sinta o ritmo, vista a identidade.
-    </p>
-  </section>
-
-  <section class="section-padding">
-    <div class="testimonial-cards">
-      <div class="testimonial reveal">
-        <p class="testimonial-text">O caimento é perfeito e a estampa brilha na luz do palco. Quem vive a noite sabe que a roupa certa muda tudo.</p>
-        <div class="testimonial-author">- Lucas T.</div>
-      </div>
-      <div class="testimonial reveal" style="transition-delay: 0.15s;">
-        <p class="testimonial-text">Dei de presente pro meu namorado e ele não tira mais. A vibe da marca é inexplicável.</p>
-        <div class="testimonial-author">- Mariana S.</div>
-      </div>
-      <div class="testimonial reveal" style="transition-delay: 0.3s;">
-        <p class="testimonial-text">Quando chega nos festivais com essa camiseta, você já sabe quem é da mesma tribo. Qualidade absurda.</p>
-        <div class="testimonial-author">- Rafael M.</div>
-      </div>
-    </div>
-  </section>
-
-  <footer id="contact">
-    <div class="newsletter reveal">
-      <h3 style="color: #fff; margin-bottom: 15px; font-family: 'Clash Display', sans-serif;">Junte-se ao Movimento</h3>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Seu melhor e-mail" required>
-        <button type="submit">Entrar</button>
-      </form>
-    </div>
-    
-    <div class="socials reveal">
-      <a href="#">Instagram</a>
-      <a href="#">Spotify</a>
-      <a href="#">TikTok</a>
-    </div>
-    <p style="margin-top: 30px; font-size: 0.8rem; color: #555;">&copy; 2026 Impontuality. Todos os direitos reservados.</p>
+  <footer>
+    <p style="color: var(--text-secondary); font-size: 0.8rem;">&copy; 2026 Impontuality Official.</p>
   </footer>
 
   <script src="script.js"></script>
