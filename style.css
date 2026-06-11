@@ -6,9 +6,10 @@
   --border-color: #222222;
   --text-primary: #ffffff;
   --text-secondary: #888888;
-  --accent: #ffffff; /* Branco Puro como destaque */
-  --accent-hover: #dddddd;
+  --accent: #DAA520; /* Dourado-Âmbar como destaque */
+  --accent-hover: #FFBF00;
   --neon-red: #ff2a2a;
+  --amber-gold: #DAA520;
 }
 
 * {
@@ -318,4 +319,77 @@ footer {
 @media (min-width: 1024px) {
   .product-grid { grid-template-columns: repeat(4, 1fr); }
   .hero { padding-bottom: 40px; }
+}
+
+/* ==========================================================
+   Manifesto / Poema
+========================================================== */
+.poem-manifesto {
+  padding: 80px 20px;
+  background-color: var(--surface-color);
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+.poem-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.poem-title {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 2rem;
+  color: var(--amber-gold);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.poem-lines p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #dddddd;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+.poem-lines p strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ==========================================================
+   Comunidade Impontuality (Prova Social)
+========================================================== */
+.community-proof {
+  padding: 60px 20px;
+  background-color: var(--bg-color);
+}
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+.community-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  filter: grayscale(0.2) contrast(1.1);
+}
+
+/* ==========================================================
+   Scarcity Tag (Urgência)
+========================================================== */
+.scarcity-tag {
+  color: var(--neon-red);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.scarcity-tag::before {
+  content: '🔥';
+  font-size: 1rem;
 }
