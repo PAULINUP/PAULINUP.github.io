@@ -3,6 +3,20 @@
 // ==========================================================
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Throttle Utility para otimizar eventos pesados no mobile (ex: Scroll)
+  function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+      const args = arguments;
+      const context = this;
+      if (!inThrottle) {
+        func.apply(context, args);
+        inThrottle = true;
+        setTimeout(() => inThrottle = false, limit);
+      }
+    }
+  }
+
   // ==========================================================
   // Sticky CTA Mobile
   // ==========================================================
@@ -10,14 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroSection = document.getElementById('home');
 
   if (stickyCta && heroSection) {
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', throttle(() => {
       // Mostra a barra fixa quando o usuário rolar além da Hero Section
       if (window.scrollY > heroSection.offsetHeight * 0.8) {
         stickyCta.classList.add('visible');
       } else {
         stickyCta.classList.remove('visible');
       }
-    });
+    }, 150));
   }
 
   // ==========================================================
@@ -61,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Scroll Depth e Tempo na Página (Com proteção)
   // ==========================================================
   let scrollMarks = { 25: false, 50: false, 75: false, 100: false };
-  window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', throttle(() => {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     
@@ -77,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof clarity === 'function') clarity("set", "ScrollDepth", `${mark}%`);
       }
     });
-  });
+  }, 300));
 
   let timeSpent = 0;
   const timeInterval = setInterval(() => {
