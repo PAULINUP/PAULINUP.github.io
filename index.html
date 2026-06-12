@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <!-- A tag de viewport é crítica para o Mobile-First -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   
   <title>Impontuality | Official</title>
@@ -10,6 +9,23 @@
   <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
   
   <link rel="stylesheet" href="style.css">
+
+  <!-- OmniGrowth Pixel Code (Injected via PAPH) -->
+  <script>
+    !function(o,m,n,i,g){
+      o.OmniGrowth=o.OmniGrowth||function(){(o.OmniGrowth.q=o.OmniGrowth.q||[]).push(arguments)};
+      var s=m.createElement(n);s.async=1;s.src=i;
+      var t=m.getElementsByTagName(n)[0];t.parentNode.insertBefore(s,t);
+    }(window, document, 'script', 'https://omniscientengine.up.railway.app/static/tracker.js');
+    
+    // ATENÇÃO: Se houver um ID real para a Impontuality no banco, troque o valor abaixo.
+    // Atualmente estamos forçando um evento para testar o painel "Fluxo Orgânico".
+    window.OMNIGROWTH_COMPANY_ID = "impontuality-music-id"; 
+    
+    OmniGrowth('init', window.OMNIGROWTH_COMPANY_ID);
+    OmniGrowth('track', 'page_view');
+  </script>
+  <!-- End OmniGrowth Pixel -->
 
   <!-- TikTok Pixel Code -->
   <script>
@@ -19,7 +35,6 @@
       ttq.page();
     }(window, document, 'ttq');
   </script>
-  <!-- End TikTok Pixel Code -->
 
   <!-- Meta Pixel Code -->
   <script>
@@ -31,56 +46,111 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    // Substitua SEU_PIXEL_META pelo ID que o usuário mandará no futuro. Deixarei preparado.
     fbq('init', 'SEU_PIXEL_META');
     fbq('track', 'PageView');
   </script>
-  <!-- End Meta Pixel Code -->
-
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "x549nfzebi");
-  </script>
 </head>
 <body>
+
+  <!-- Live Notification Popup -->
+  <div class="live-notification glass-panel" id="live-notif">
+    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Avatar" class="live-avatar" id="notif-img">
+    <div>
+      <p class="live-text"><strong id="notif-name">Lucas T.</strong> comprou <span id="notif-product">Camiseta Original</span></p>
+      <p class="live-time">Há 2 minutos</p>
+    </div>
+  </div>
 
   <header>
     <a href="#home" class="logo-text">Impontuality</a>
   </header>
 
   <section class="hero" id="home">
+    <img src="https://images.unsplash.com/photo-1470229722913-7c090be5a567?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" class="hero-bg-video" alt="Club Background">
+    
     <div class="hero-content">
-      <h1>A Pista <br>Te Chama</h1>
-      <p>A roupa oficial de quem não vive pelo relógio.</p>
+      <h1 class="text-gradient">A Pista <br>Te Chama</h1>
+      <p>A roupa oficial de quem não vive pelo relógio. Vista a energia da noite.</p>
     </div>
+
+    <div class="scroll-indicator"><div></div></div>
   </section>
 
   <!-- Sticky CTA Mobile -->
   <div class="sticky-cta-container" id="sticky-cta">
-    <a href="#store" class="btn">Ver Coleção</a>
+    <a href="#store" class="btn-premium">Destravar Coleção</a>
   </div>
 
-  <section class="poem-manifesto">
-    <div class="poem-content">
-      <h2 class="poem-title">I'am from Bras(z)il</h2>
-      <div class="poem-lines">
-        <p>Não vivo do que o relógio dita.</p>
-        <p>Eu dito <strong>o meu próprio tempo.</strong></p>
-        <p>A garra brasileira nas veias,</p>
-        <p>E a vibração da pista na alma.</p>
-        <p>Onde o caos encontra o <strong>perfeito movimento.</strong></p>
+  <section class="store" id="store">
+    <h2 class="section-title text-gradient">Drop 01</h2>
+    
+    <div class="product-grid">
+      <!-- Produto 1 -->
+      <div class="product-card fade-element">
+        <div class="product-badge">Best Seller</div>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta Original" class="product-image">
+        <div class="product-info">
+          <div class="product-details">
+            <div class="product-name">Original</div>
+            <div class="product-price">R$ 69,90</div>
+          </div>
+          <a href="https://oficial.impontuality.com.br/camiseta/original-298650.html" class="product-buy-btn buy-link" data-product-id="original-298650" data-product-name="Camiseta Original">➔</a>
+        </div>
+      </div>
+
+      <!-- Produto 2 -->
+      <div class="product-card fade-element">
+        <div class="product-badge">Novo</div>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta The Sun" class="product-image">
+        <div class="product-info">
+          <div class="product-details">
+            <div class="product-name">The Sun</div>
+            <div class="product-price">R$ 69,90</div>
+          </div>
+          <a href="https://umapenca.com/impontuality/camiseta/the-sun-298645.html" class="product-buy-btn buy-link" data-product-id="the-sun-298645" data-product-name="Camiseta The Sun">➔</a>
+        </div>
+      </div>
+
+      <!-- Produto 3 -->
+      <div class="product-card fade-element">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta Dream of Tomorrow" class="product-image">
+        <div class="product-info">
+          <div class="product-details">
+            <div class="product-name">Dream of Tomorrow</div>
+            <div class="product-price">R$ 69,90</div>
+          </div>
+          <a href="https://umapenca.com/impontuality/camiseta/dream-of-tomorrow-298647.html" class="product-buy-btn buy-link" data-product-id="dream-of-tomorrow-298647" data-product-name="Camiseta Dream of Tomorrow">➔</a>
+        </div>
+      </div>
+
+      <!-- Produto 4 -->
+      <div class="product-card fade-element">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta Drive" class="product-image">
+        <div class="product-info">
+          <div class="product-details">
+            <div class="product-name">Drive</div>
+            <div class="product-price">R$ 69,90</div>
+          </div>
+          <a href="https://oficial.impontuality.com.br/camiseta/drive-298646.html" class="product-buy-btn buy-link" data-product-id="drive-298646" data-product-name="Camiseta Drive">➔</a>
+        </div>
       </div>
     </div>
   </section>
 
+  <section class="poem-manifesto">
+    <h2 class="poem-title text-gradient">I'am from Bras(z)il</h2>
+    <div class="poem-lines">
+      <p>Não vivo do que o relógio dita.</p>
+      <p>Eu dito <strong>o meu próprio tempo.</strong></p>
+      <p>A garra brasileira nas veias,</p>
+      <p>E a vibração da pista na alma.</p>
+    </div>
+  </section>
+
   <section class="community-proof">
-    <h2 class="section-title" style="font-size: 1.5rem; border:none; margin-bottom: 10px;">Comunidade Impontuality</h2>
-    <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem;">Quem vive o movimento.</p>
-    <div class="community-grid">
+    <h2 class="section-title text-gradient" style="font-size: 1.8rem; margin-bottom: 20px;">Comunidade</h2>
+    
+    <div class="carousel-container">
       <img loading="lazy" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cliente usando Impontuality" class="community-img">
       <img loading="lazy" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Estilo Impontuality" class="community-img">
       <img loading="lazy" src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cliente usando Impontuality na festa" class="community-img">
@@ -88,81 +158,21 @@
     </div>
   </section>
 
-  <section class="store" id="store">
-    <h2 class="section-title">Drop 01</h2>
-    
-    <div class="product-grid">
-      <!-- Produto 1 -->
-      <div class="product-card">
-        <div class="product-badge">Best Seller</div>
-        <img loading="lazy" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta Original" class="product-image">
-        <div class="product-info">
-          <div class="product-name">Original</div>
-          <div class="product-price">R$ 69,90</div>
-          <a href="https://oficial.impontuality.com.br/camiseta/original-298650.html" target="_blank" class="product-buy-btn" data-product-id="original-298650" data-product-name="Camiseta Original">Vestir Agora</a>
-          <div class="scarcity-tag">Edição autoral limitada. Envio imediato.</div>
-        </div>
-      </div>
-
-      <!-- Produto 2 -->
-      <div class="product-card">
-        <div class="product-badge">Novo</div>
-        <img loading="lazy" src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta The Sun" class="product-image">
-        <div class="product-info">
-          <div class="product-name">The Sun</div>
-          <div class="product-price">R$ 69,90</div>
-          <a href="https://umapenca.com/impontuality/camiseta/the-sun-298645.html" target="_blank" class="product-buy-btn" data-product-id="the-sun-298645" data-product-name="Camiseta The Sun">Vestir Agora</a>
-          <div class="scarcity-tag">Edição autoral limitada. Envio imediato.</div>
-        </div>
-      </div>
-
-      <!-- Produto 3 -->
-      <div class="product-card">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta Dream of Tomorrow" class="product-image">
-        <div class="product-info">
-          <div class="product-name">Dream of Tomorrow</div>
-          <div class="product-price">R$ 69,90</div>
-          <a href="https://umapenca.com/impontuality/camiseta/dream-of-tomorrow-298647.html" target="_blank" class="product-buy-btn" data-product-id="dream-of-tomorrow-298647" data-product-name="Camiseta Dream of Tomorrow">Vestir Agora</a>
-          <div class="scarcity-tag">Edição autoral limitada. Envio imediato.</div>
-        </div>
-      </div>
-
-      <!-- Produto 4 -->
-      <div class="product-card">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta Drive" class="product-image">
-        <div class="product-info">
-          <div class="product-name">Drive</div>
-          <div class="product-price">R$ 69,90</div>
-          <a href="https://oficial.impontuality.com.br/camiseta/drive-298646.html" target="_blank" class="product-buy-btn" data-product-id="drive-298646" data-product-name="Camiseta Drive">Vestir Agora</a>
-          <div class="scarcity-tag">Edição autoral limitada. Envio imediato.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="music-section">
-    <h2 class="section-title" style="font-size: 1.5rem; border:none;">Entre na Vibe</h2>
+    <h2 class="section-title text-gradient" style="font-size: 1.8rem;">Entre na Vibe</h2>
     <iframe class="spotify-embed" src="https://open.spotify.com/embed/playlist/4vnd8wPeEkenSPN5QVUMRk?utm_source=generator&theme=0" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </section>
-
-  <section class="manifesto">
-    <p>"Sinta a música nas suas costas.<br>O ritmo é a nossa única regra."</p>
-  </section>
-
-  <section class="testimonials">
-    <div class="testimonial-card">
-      <p class="testimonial-text">"Chegou rápido, tecido macio demais. Usei no último festival e chamei muita atenção."</p>
-      <div class="testimonial-author">Lucas T.</div>
-    </div>
-    <div class="testimonial-card">
-      <p class="testimonial-text">"A estampa é insana pessoalmente. Identidade visual absurda!"</p>
-      <div class="testimonial-author">Rafael M.</div>
-    </div>
   </section>
 
   <footer>
     <p style="color: var(--text-secondary); font-size: 0.8rem;">&copy; 2026 Impontuality Official.</p>
   </footer>
+
+  <!-- Checkout Overlay -->
+  <div class="checkout-overlay" id="checkout-overlay">
+    <div class="spinner"></div>
+    <h3 class="text-gradient" style="font-family: 'Clash Display'; font-size: 1.5rem; text-transform: uppercase;">Acesso VIP</h3>
+    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 10px;">Preparando seu checkout...</p>
+  </div>
 
   <script src="script.js"></script>
 </body>
