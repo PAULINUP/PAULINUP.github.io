@@ -9,7 +9,6 @@
   <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⏳</text></svg>">
   
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <!-- GSAP Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -46,22 +45,9 @@
       var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://analytics.tiktok.com/i18n/pixel/sdk.js';
       var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
     }(window, document, 'ttq');
-
-    // Microsoft Clarity - SUBSTITUA 'YOUR_CLARITY_ID' PELO SEU ID REAL (Descomente para usar)
-    // (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity","script","YOUR_CLARITY_ID"); 
-
   </script>
 </head>
 <body>
-
-  <!-- 🧲 THE HOOK: Preloader Interativo (Clean & Futurista) -->
-  <div id="hook-loader" class="hook-overlay">
-    <div class="hook-content">
-      <div class="hourglass-icon">⏳</div>
-      <h2 class="text-futuristic">O tempo é uma construção.</h2>
-      <button id="start-journey" class="btn-magnetic">ENTRAR NO FLUXO ➔</button>
-    </div>
-  </div>
 
   <!-- Barra de Cupom Magnética -->
   <div class="promo-bar">
@@ -72,7 +58,7 @@
     <a href="#home" class="logo-text">Impontuality</a>
   </header>
 
-  <main id="main-content">
+  <main>
     <!-- HERO: Future Unbound -->
     <section class="hero" id="home">
       <div class="hero-video-container">
@@ -88,9 +74,9 @@
       <div class="scroll-indicator"><div></div></div>
     </section>
 
-    <!-- NARRATIVA: A Essência (2021) - Revelada em Camadas -->
+    <!-- NARRATIVA: A Essência (2021) -->
     <section class="story-section" id="about">
-      <div class="story-card glass-panel fade-element">
+      <div class="story-card glass-panel">
         <h2 class="text-futuristic">ORIGEM: 2021</h2>
         <div class="hourglass-inverted">⏳</div>
         <p>Em um mundo ditado por relógios, escolhemos a <strong>liberdade</strong>. A ampulheta invertida é nosso manifesto: o tempo não nos define, nós o redefinimos.</p>
@@ -99,43 +85,47 @@
       </div>
     </section>
 
-    <!-- VITRINE: Interativa (Produtos com Vibe Futurista) -->
+    <!-- VITRINE: Produtos -->
     <section class="store" id="store">
       <h2 class="section-title text-futuristic">DROP: SYNC</h2>
       
       <div class="product-grid">
         <!-- Produto 1 -->
-        <div class="product-card fade-element">
+        <div class="product-card">
           <div class="product-badge">ESSENCIAL</div>
-          <img loading="lazy" src="https://images.unsplash.com/photo-1607958729397-5e0427303024?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta Original" class="product-image">
-          <div class="product-info">
-            <div class="product-details">
-              <div class="product-name">ORIGINAL_TEE</div>
-              <div class="product-price">R$ 69,90</div>
+          <a href="https://umapenca.com/impontuality/camiseta/original-298650.html" class="product-link">
+            <img src="https://images.unsplash.com/photo-1607958729397-5e0427303024?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta Original" class="product-image">
+            <div class="product-info">
+              <div class="product-details">
+                <div class="product-name">ORIGINAL_TEE</div>
+                <div class="product-price">R$ 69,90</div>
+              </div>
+              <div class="product-buy-btn">➔</div>
             </div>
-            <a href="https://umapenca.com/impontuality/camiseta/original-298650.html" class="product-buy-btn buy-link" data-product-id="original-298650" data-product-name="Camiseta Original">➔</a>
-          </div>
+          </a>
         </div>
 
         <!-- Produto 2 -->
-        <div class="product-card fade-element">
+        <div class="product-card">
           <div class="product-badge">NOVO</div>
-          <img loading="lazy" src="https://images.unsplash.com/photo-1607958729397-5e0427303024?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta The Sun" class="product-image">
-          <div class="product-info">
-            <div class="product-details">
-              <div class="product-name">SUN_CODE</div>
-              <div class="product-price">R$ 69,90</div>
+          <a href="https://umapenca.com/impontuality/camiseta/the-sun-298645.html" class="product-link">
+            <img src="https://images.unsplash.com/photo-1607958729397-5e0427303024?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta The Sun" class="product-image">
+            <div class="product-info">
+              <div class="product-details">
+                <div class="product-name">SUN_CODE</div>
+                <div class="product-price">R$ 69,90</div>
+              </div>
+              <div class="product-buy-btn">➔</div>
             </div>
-            <a href="https://umapenca.com/impontuality/camiseta/the-sun-298645.html" class="product-buy-btn buy-link" data-product-id="the-sun-298645" data-product-name="Camiseta The Sun">➔</a>
-          </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- COMUNIDADE & SOUNDSCAPE -->
+    <!-- SOUNDSCAPE -->
     <section class="music-section">
       <h2 class="section-title text-futuristic">SOUNDSCAPE</h2>
-      <div class="spotify-container glass-panel fade-element">
+      <div class="spotify-container glass-panel">
         <iframe src="https://open.spotify.com/embed/playlist/4vnd8wPeEkenSPN5QVUMRk?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
     </section>
@@ -144,12 +134,6 @@
   <!-- Sticky CTA Mobile -->
   <div class="sticky-cta-container" id="sticky-cta">
     <a href="#store" class="btn-futuristic">ATIVAR 20% OFF</a>
-  </div>
-
-  <!-- Checkout Overlay -->
-  <div class="checkout-overlay" id="checkout-overlay">
-    <div class="spinner"></div>
-    <h3 class="text-futuristic">SINCRONIZANDO PEDIDO...</h3>
   </div>
 
   <script src="script.js"></script>
