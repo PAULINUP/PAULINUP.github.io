@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+  <!-- GSAP Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
   <!-- Pixels (Mantidos da versão anterior) -->
   <script>
     !function(o,m,n,i,g){
@@ -25,11 +29,11 @@
 </head>
 <body>
 
-  <!-- 🧲 THE HOOK: Preloader Interativo -->
+  <!-- 🧲 THE HOOK: Preloader Interativo (Human-First) -->
   <div id="hook-loader" class="hook-overlay">
     <div class="hook-content">
       <div class="hourglass-icon">⏳</div>
-      <h2 class="text-gradient">O tempo é uma ilusão.</h2>
+      <h2 class="text-raw">O tempo é uma ilusão.</h2>
       <button id="start-journey" class="btn-magnetic">LIBERTE-SE ➔</button>
     </div>
   </div>
@@ -53,14 +57,14 @@
   </header>
 
   <main id="main-content" class="hidden">
-    <!-- HERO: Streetwear & Eletrônica -->
+    <!-- HERO: Streetwear & Eletrônica (Raw & Autêntico) -->
     <section class="hero" id="home">
       <div class="hero-video-container">
-        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" class="hero-bg-video" alt="Street Background">
+        <img src="https://images.unsplash.com/photo-1517677208171-0bc672fdceee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" class="hero-bg-video" alt="Street Background">
       </div>
       
       <div class="hero-content">
-        <h1 class="text-gradient">VIVA O AGORA</h1>
+        <h1 class="text-raw">VIVA O AGORA</h1>
         <p>Streetwear feito para quem dita o próprio tempo. Nascidos na pista, criados para a liberdade.</p>
         <a href="#store" class="btn-premium-outline">Explorar Drop</a>
       </div>
@@ -68,10 +72,10 @@
       <div class="scroll-indicator"><div></div></div>
     </section>
 
-    <!-- NARRATIVA: A História (2021) -->
+    <!-- NARRATIVA: A História (2021) - Mais Humana -->
     <section class="story-section" id="about">
       <div class="story-card glass-panel fade-element">
-        <h2 class="text-gradient">Desde 2021</h2>
+        <h2 class="text-raw">Desde 2021</h2>
         <div class="hourglass-inverted">⏳</div>
         <p>Nascemos do desejo de representar a <strong>liberdade</strong> pura. Onde a ampulheta vira de cabeça para baixo e o tempo para de mandar em você.</p>
         <p>Impontuality não é sobre atraso, é sobre <strong>presença</strong>. É aproveitar o melhor que a vida tem a oferecer, sem olhar para o relógio.</p>
@@ -79,9 +83,9 @@
       </div>
     </section>
 
-    <!-- VITRINE: Interativa -->
+    <!-- VITRINE: Interativa (Produtos com Vibe) -->
     <section class="store" id="store">
-      <h2 class="section-title text-gradient">Drop Freedom</h2>
+      <h2 class="section-title text-raw">Drop Freedom</h2>
       
       <div class="product-grid">
         <!-- Produto 1 -->
@@ -114,7 +118,7 @@
 
     <!-- COMUNIDADE & MÚSICA -->
     <section class="music-section">
-      <h2 class="section-title text-gradient">Sinta a Batida</h2>
+      <h2 class="section-title text-raw">Sinta a Batida</h2>
       <div class="spotify-container glass-panel fade-element">
         <iframe src="https://open.spotify.com/embed/playlist/4vnd8wPeEkenSPN5QVUMRk?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
@@ -129,7 +133,7 @@
   <!-- Checkout Overlay -->
   <div class="checkout-overlay" id="checkout-overlay">
     <div class="spinner"></div>
-    <h3 class="text-gradient">PREPARANDO ACESSO...</h3>
+    <h3 class="text-raw">PREPARANDO ACESSO...</h3>
   </div>
 
   <script src="script.js"></script>

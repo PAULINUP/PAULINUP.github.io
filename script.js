@@ -1,63 +1,87 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const hookLoader = document.getElementById('hook-loader');
-  const startBtn = document.getElementById('start-journey');
-  const mainContent = document.getElementById('main-content');
-  const stickyCta = document.getElementById('sticky-cta');
+  // Register GSAP plugins
+  gsap.registerPlugin(ScrollTrigger);
 
-  // 1. 🧲 THE HOOK: Lógica de entrada
-  startBtn.addEventListener('click', () => {
-    hookLoader.classList.add('fade-out');
-    mainContent.classList.remove('hidden');
-    
-    // Inicia animações de entrada
-    setTimeout(() => {
-      document.querySelector('.hero-content').classList.add('visible');
-    }, 100);
+  const hookLoader = document.getElementById("hook-loader");
+  const startBtn = document.getElementById("start-journey");
+  const mainContent = document.getElementById("main-content");
+  const stickyCta = document.getElementById("sticky-cta");
+
+  // 1. 🧲 THE HOOK: Lógica de entrada com GSAP
+  startBtn.addEventListener("click", () => {
+    gsap.to(hookLoader, { opacity: 0, duration: 0.8, ease: "power2.inOut", onComplete: () => {
+      hookLoader.style.display = "none";
+      mainContent.classList.remove("hidden");
+      // Animação de entrada do Hero Content
+      gsap.fromTo(".hero-content", 
+        { opacity: 0, y: 50 }, 
+        { opacity: 1, y: 0, duration: 1.2, ease: "power3.out", delay: 0.2 }
+      );
+      // Animação do scroll indicator
+      gsap.fromTo(".scroll-indicator", 
+        { opacity: 0, y: 20 }, 
+        { opacity: 1, y: 0, duration: 1, ease: "power2.out", delay: 0.8 }
+      );
+    }});
   });
 
-  // 2. Intersection Observer para elementos Fade-In
-  const fadeElements = document.querySelectorAll('.fade-element');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+  // 2. Animações de Scroll com GSAP (substituindo fade-element)
+  gsap.utils.toArray(".fade-element").forEach(element => {
+    gsap.from(element, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: element,
+        start: "top 85%", // Quando o topo do elemento atinge 85% da viewport
+        end: "bottom top",
+        toggleActions: "play none none none", // Play a animação uma vez
       }
     });
-  }, { threshold: 0.1 });
-
-  fadeElements.forEach(el => observer.observe(el));
+  });
 
   // 3. Sticky CTA Logic
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
-      stickyCta.classList.add('visible');
-    } else {
-      stickyCta.classList.remove('visible');
-    }
+  ScrollTrigger.create({
+    trigger: "body",
+    start: "top -500px", // Mostra o CTA depois de rolar 500px
+    toggleActions: "play none reverse none",
+    onEnter: () => stickyCta.classList.add("visible"),
+    onLeaveBack: () => stickyCta.classList.remove("visible"),
   });
 
   // 4. Copiar Cupom ao clicar (Efeito Magnético)
-  const promoBar = document.querySelector('.promo-bar');
-  const couponText = document.getElementById('copy-coupon');
+  const promoBar = document.querySelector(".promo-bar");
+  const couponText = document.getElementById("copy-coupon");
 
-  promoBar.addEventListener('click', () => {
-    navigator.clipboard.writeText('EDM20').then(() => {
+  promoBar.addEventListener("click", () => {
+    navigator.clipboard.writeText("EDM20").then(() => {
       const originalText = promoBar.innerHTML;
-      promoBar.innerHTML = "CUPOM COPIADO! APROVEITE ➔";
-      promoBar.style.background = "#FFF";
-      
-      setTimeout(() => {
-        promoBar.innerHTML = originalText;
-        promoBar.style.background = "var(--acid-green)";
-      }, 2000);
+      gsap.to(promoBar, { 
+        backgroundColor: "#FFF", 
+        color: "#121212", 
+        duration: 0.2, 
+        onComplete: () => {
+          promoBar.innerHTML = "CUPOM COPIADO! APROVEITE ➔";
+          gsap.to(promoBar, { 
+            backgroundColor: "var(--accent-color)", 
+            color: "var(--bg-dark)", 
+            delay: 1.5, 
+            duration: 0.5, 
+            onComplete: () => {
+              promoBar.innerHTML = originalText;
+            }
+          });
+        }
+      });
     });
   });
 
   // 5. Notificações Sociais (Social Proof)
-  const notif = document.getElementById('live-notif');
-  const notifName = document.getElementById('notif-name');
-  const notifProduct = document.getElementById('notif-product');
-  const notifImg = document.getElementById('notif-img');
+  const notif = document.getElementById("live-notif");
+  const notifName = document.getElementById("notif-name");
+  const notifProduct = document.getElementById("notif-product");
+  const notifImg = document.getElementById("notif-img");
   
   const fakePurchases = [
     { name: "Lucas T.", product: "Camiseta Original", img: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&w=100&q=80" },
@@ -71,21 +95,25 @@ document.addEventListener("DOMContentLoaded", () => {
     notifProduct.textContent = randomPurchase.product;
     notifImg.src = randomPurchase.img;
     
-    notif.classList.add('show');
-    setTimeout(() => notif.classList.remove('show'), 4000);
+    gsap.fromTo(notif, 
+      { y: -150, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.7)", onComplete: () => {
+        gsap.to(notif, { y: -150, opacity: 0, delay: 3, duration: 0.5, ease: "power2.in" });
+      }}
+    );
   }
 
   setInterval(showRandomNotification, 20000);
 
   // 6. Checkout Overlay
-  const buyLinks = document.querySelectorAll('.buy-link');
-  const overlay = document.getElementById('checkout-overlay');
+  const buyLinks = document.querySelectorAll(".buy-link");
+  const overlay = document.getElementById("checkout-overlay");
 
   buyLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
+    link.addEventListener("click", (e) => {
       e.preventDefault();
-      const href = link.getAttribute('href');
-      overlay.classList.add('active');
+      const href = link.getAttribute("href");
+      overlay.classList.add("active");
       
       setTimeout(() => {
         window.location.href = href;

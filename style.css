@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap');
+/* IMPONTUALITY - HUMAN-FIRST & FLUIDEZ EXTREMA */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Oswald:wght@400;700&display=swap');
 
 :root {
-  --bg-dark: #050505;
-  --surface-glass: rgba(255, 255, 255, 0.03);
-  --neon-purple: #B026FF;
-  --acid-green: #00FF88;
+  --bg-dark: #121212; /* Mais escuro, menos "neon" */
+  --surface-glass: rgba(255, 255, 255, 0.05); /* Mais sutil */
+  --accent-color: #FFD700; /* Dourado/Amarelo, remete a energia */
   --text-primary: #FFFFFF;
-  --text-secondary: #888888;
+  --text-secondary: #B0B0B0;
   --border-glass: rgba(255, 255, 255, 0.1);
 }
 
@@ -18,7 +19,7 @@
 }
 
 html, body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-primary);
   overflow-x: hidden;
@@ -44,16 +45,19 @@ html, body {
 }
 
 .hook-content h2 {
-  font-family: 'Clash Display', sans-serif;
-  font-size: 2rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem;
   margin-bottom: 30px;
   letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-primary);
 }
 
 .hourglass-icon {
-  font-size: 4rem;
+  font-size: 5rem;
   margin-bottom: 20px;
   animation: rotateHourglass 3s infinite ease-in-out;
+  color: var(--accent-color);
 }
 
 @keyframes rotateHourglass {
@@ -65,49 +69,50 @@ html, body {
 
 .btn-magnetic {
   padding: 15px 40px;
-  background: transparent;
-  border: 1px solid var(--text-primary);
-  color: var(--text-primary);
-  font-family: 'Clash Display', sans-serif;
-  font-weight: 600;
-  letter-spacing: 2px;
+  background: var(--accent-color);
+  border: none;
+  color: var(--bg-dark);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
 .btn-magnetic:hover {
   background: var(--text-primary);
-  color: var(--bg-dark);
   box-shadow: 0 0 30px rgba(255,255,255,0.3);
 }
 
 /* Promo Bar */
 .promo-bar {
-  background: var(--acid-green);
-  color: #000;
+  background: var(--accent-color);
+  color: var(--bg-dark);
   text-align: center;
   padding: 8px;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 1px;
   position: fixed;
   top: 0; width: 100%;
   z-index: 1001;
+  text-transform: uppercase;
 }
 
 /* Utilities */
-.text-gradient {
-  background: linear-gradient(135deg, #FFF 30%, var(--neon-purple) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.text-raw {
+  color: var(--text-primary);
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
 }
 
 .glass-panel {
   background: var(--surface-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border-glass);
-  border-radius: 24px;
+  border-radius: 16px;
 }
 
 /* Header */
@@ -121,11 +126,11 @@ header {
 }
 
 .logo-text {
-  font-family: 'Clash Display', sans-serif;
-  font-size: 1.2rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: 4px;
-  color: #FFF;
+  letter-spacing: 5px;
+  color: var(--text-primary);
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -140,6 +145,7 @@ header {
   text-align: center;
   padding: 20px;
   position: relative;
+  overflow: hidden;
 }
 
 .hero-video-container {
@@ -151,41 +157,84 @@ header {
 .hero-bg-video {
   width: 100%; height: 100%;
   object-fit: cover;
-  filter: brightness(0.3) grayscale(0.5);
+  filter: brightness(0.4) grayscale(0.2);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
-  font-family: 'Clash Display', sans-serif;
-  font-size: 4rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 4.5rem;
   line-height: 0.9;
   margin-bottom: 20px;
+  color: var(--text-primary);
 }
 
 .hero p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
-  max-width: 300px;
+  max-width: 350px;
   margin-bottom: 40px;
   line-height: 1.6;
 }
 
 .btn-premium-outline {
   padding: 18px 40px;
-  border: 1px solid var(--border-glass);
-  color: #FFF;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
   text-decoration: none;
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   border-radius: 100px;
   backdrop-filter: blur(5px);
   transition: all 0.3s ease;
+  text-transform: uppercase;
 }
+
+.btn-premium-outline:hover {
+  background: var(--accent-color);
+  color: var(--bg-dark);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: bounce 2s infinite;
+}
+.scroll-indicator div {
+  width: 20px; height: 30px;
+  border: 2px solid var(--text-secondary);
+  border-radius: 10px;
+  position: relative;
+}
+.scroll-indicator div::before {
+  content: '';
+  position: absolute;
+  top: 5px; left: 50%;
+  transform: translateX(-50%);
+  width: 4px; height: 4px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  animation: scrollDot 2s infinite;
+}
+
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);} 40% {transform: translateX(-50%) translateY(-10px);} 60% {transform: translateX(-50%) translateY(-5px);} }
+@keyframes scrollDot { 0% { top: 5px; opacity: 1; } 100% { top: 15px; opacity: 0; } }
 
 /* Story Section */
 .story-section {
   padding: 100px 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 80vh;
 }
 
 .story-card {
@@ -195,16 +244,18 @@ header {
 }
 
 .story-card h2 {
-  font-family: 'Clash Display', sans-serif;
-  font-size: 2.5rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.8rem;
   margin-bottom: 30px;
+  color: var(--text-primary);
 }
 
 .hourglass-inverted {
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: 30px;
   display: inline-block;
   transform: rotate(180deg);
+  color: var(--accent-color);
 }
 
 .story-card p {
@@ -215,10 +266,11 @@ header {
 }
 
 .manifesto-call {
-  font-family: 'Clash Display', sans-serif;
-  color: #FFF !important;
-  font-weight: 600;
+  font-family: 'Oswald', sans-serif;
+  color: var(--accent-color) !important;
+  font-weight: 700;
   margin-top: 40px;
+  text-transform: uppercase;
 }
 
 /* Store */
@@ -227,10 +279,11 @@ header {
 }
 
 .section-title {
-  font-family: 'Clash Display', sans-serif;
-  font-size: 2.5rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
   text-align: center;
   margin-bottom: 50px;
+  color: var(--text-primary);
 }
 
 .product-grid {
@@ -241,9 +294,10 @@ header {
 
 .product-card {
   position: relative;
-  border-radius: 30px;
+  border-radius: 20px;
   overflow: hidden;
   height: 500px;
+  border: 1px solid var(--border-glass);
 }
 
 .product-image {
@@ -267,21 +321,22 @@ header {
 }
 
 .product-name {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 1.8rem;
   font-weight: 600;
+  color: var(--text-primary);
 }
 
 .product-price {
-  color: var(--acid-green);
+  color: var(--accent-color);
   font-weight: 700;
   margin-top: 5px;
 }
 
 .product-buy-btn {
   width: 60px; height: 60px;
-  background: #FFF;
-  color: #000;
+  background: var(--accent-color);
+  color: var(--bg-dark);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -289,6 +344,11 @@ header {
   text-decoration: none;
   font-size: 1.5rem;
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.product-buy-btn:hover {
+  transform: scale(1.1);
 }
 
 /* Sticky CTA */
@@ -310,15 +370,16 @@ header {
   display: block;
   width: 100%;
   padding: 22px;
-  background: var(--neon-purple);
-  color: #FFF;
+  background: var(--accent-color);
+  color: var(--bg-dark);
   text-align: center;
   text-decoration: none;
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   border-radius: 20px;
   letter-spacing: 2px;
-  box-shadow: 0 15px 40px rgba(176, 38, 255, 0.4);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+  text-transform: uppercase;
 }
 
 /* Music Section */
@@ -332,6 +393,72 @@ header {
   max-width: 500px;
   margin: 0 auto;
 }
+
+/* Live Notification */
+.live-notification {
+  position: fixed;
+  top: 80px; left: 20px; right: 20px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1000;
+  transform: translateY(-150%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.live-notification.show {
+  transform: translateY(0);
+}
+
+.live-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.live-text {
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+.live-text strong {
+  color: var(--accent-color);
+}
+
+.live-time {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* Checkout Overlay */
+.checkout-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: var(--bg-dark);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.checkout-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.spinner {
+  width: 40px; height: 40px;
+  border: 3px solid rgba(255, 215, 0, 0.3);
+  border-top-color: var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
 
 /* Hidden Utility */
 .hidden {
@@ -353,5 +480,23 @@ header {
 @media (min-width: 768px) {
   .product-grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .hero h1 {
+    font-size: 6rem;
+  }
+  .hero p {
+    max-width: 600px;
+  }
+  .story-card {
+    padding: 60px 40px;
+  }
+  .story-card h2 {
+    font-size: 3.5rem;
+  }
+  .story-card p {
+    font-size: 1.2rem;
+  }
+  .section-title {
+    font-size: 4rem;
   }
 }
