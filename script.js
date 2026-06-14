@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         color: "#121212", 
         duration: 0.2, 
         onComplete: () => {
-          promoBar.innerHTML = "CUPOM COPIADO! APROVEITE ➔";
+          promoBar.innerHTML = "CUPOM COPIADO! ATIVADO ➔";
           gsap.to(promoBar, { 
             backgroundColor: "var(--accent-color)", 
             color: "var(--bg-dark)", 
@@ -77,35 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 5. Notificações Sociais (Social Proof)
-  const notif = document.getElementById("live-notif");
-  const notifName = document.getElementById("notif-name");
-  const notifProduct = document.getElementById("notif-product");
-  const notifImg = document.getElementById("notif-img");
-  
-  const fakePurchases = [
-    { name: "Lucas T.", product: "Camiseta Original", img: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&w=100&q=80" },
-    { name: "Mariana S.", product: "Camiseta The Sun", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&w=100&q=80" },
-    { name: "Pedro H.", product: "Camiseta Drive", img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&w=100&q=80" }
-  ];
-
-  function showRandomNotification() {
-    const randomPurchase = fakePurchases[Math.floor(Math.random() * fakePurchases.length)];
-    notifName.textContent = randomPurchase.name;
-    notifProduct.textContent = randomPurchase.product;
-    notifImg.src = randomPurchase.img;
-    
-    gsap.fromTo(notif, 
-      { y: -150, opacity: 0 }, 
-      { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.7)", onComplete: () => {
-        gsap.to(notif, { y: -150, opacity: 0, delay: 3, duration: 0.5, ease: "power2.in" });
-      }}
-    );
-  }
-
-  setInterval(showRandomNotification, 20000);
-
-  // 6. Checkout Overlay
+  // 5. Checkout Overlay
   const buyLinks = document.querySelectorAll(".buy-link");
   const overlay = document.getElementById("checkout-overlay");
 
