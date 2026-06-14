@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap');
 
 :root {
-  --bg-dark: #07040D;
-  --surface-glass: rgba(20, 15, 30, 0.4);
+  --bg-dark: #050505;
+  --surface-glass: rgba(255, 255, 255, 0.03);
   --neon-purple: #B026FF;
   --acid-green: #00FF88;
   --text-primary: #FFFFFF;
-  --text-secondary: #9BA1A6;
-  --border-glass: rgba(255, 255, 255, 0.08);
+  --text-secondary: #888888;
+  --border-glass: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -22,74 +22,116 @@ html, body {
   background-color: var(--bg-dark);
   color: var(--text-primary);
   overflow-x: hidden;
-  /* Scroll Snapping enabled for Mobile */
-  scroll-snap-type: y proximity;
   scroll-behavior: smooth;
 }
 
-body::before {
-  content: '';
+/* 🧲 THE HOOK: Overlay */
+.hook-overlay {
   position: fixed;
   top: 0; left: 0; width: 100vw; height: 100vh;
-  background: radial-gradient(circle at 50% 0%, rgba(176, 38, 255, 0.15) 0%, rgba(0,0,0,0) 60%),
-              radial-gradient(circle at 100% 100%, rgba(0, 255, 136, 0.05) 0%, rgba(0,0,0,0) 50%);
-  pointer-events: none;
-  z-index: -1;
-}
-
-section {
-  scroll-snap-align: start;
-}
-
-/* ==========================================================
-   Utility Classes (Glassmorphism & Gradients)
-========================================================== */
-.glass-panel {
-  background: var(--surface-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-glass);
-  border-radius: 20px;
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, #FFFFFF 0%, #B026FF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ==========================================================
-   Header Minimalista
-========================================================== */
-header {
-  position: fixed;
-  top: 0; left: 0; width: 100%;
-  padding: 15px 20px;
-  z-index: 100;
+  background: var(--bg-dark);
+  z-index: 10000;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, rgba(7,4,13,0.9) 0%, rgba(7,4,13,0) 100%);
+  text-align: center;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+}
+
+.hook-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hook-content h2 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.hourglass-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: rotateHourglass 3s infinite ease-in-out;
+}
+
+@keyframes rotateHourglass {
+  0% { transform: rotate(0deg); }
+  45% { transform: rotate(180deg); }
+  55% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.btn-magnetic {
+  padding: 15px 40px;
+  background: transparent;
+  border: 1px solid var(--text-primary);
+  color: var(--text-primary);
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-magnetic:hover {
+  background: var(--text-primary);
+  color: var(--bg-dark);
+  box-shadow: 0 0 30px rgba(255,255,255,0.3);
+}
+
+/* Promo Bar */
+.promo-bar {
+  background: var(--acid-green);
+  color: #000;
+  text-align: center;
+  padding: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: fixed;
+  top: 0; width: 100%;
+  z-index: 1001;
+}
+
+/* Utilities */
+.text-gradient {
+  background: linear-gradient(135deg, #FFF 30%, var(--neon-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-panel {
+  background: var(--surface-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-radius: 24px;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 35px; left: 0; width: 100%;
+  padding: 20px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
 }
 
 .logo-text {
   font-family: 'Clash Display', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: 3px;
-  color: var(--text-primary);
+  letter-spacing: 4px;
+  color: #FFF;
   text-decoration: none;
   text-transform: uppercase;
-  text-shadow: 0 0 20px rgba(176, 38, 255, 0.5);
 }
 
-/* ==========================================================
-   Hero Section - O Hook (100vh)
-========================================================== */
+/* Hero */
 .hero {
-  position: relative;
-  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -97,88 +139,167 @@ header {
   align-items: center;
   text-align: center;
   padding: 20px;
-  overflow: hidden;
+  position: relative;
+}
+
+.hero-video-container {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: -1;
 }
 
 .hero-bg-video {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  width: 100%; height: 100%;
   object-fit: cover;
-  z-index: 0;
-  filter: brightness(0.4) contrast(1.2);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  transform: translateY(20px);
-  opacity: 0;
-  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: 0.2s;
-}
-
-@keyframes fadeUp {
-  to { transform: translateY(0); opacity: 1; }
+  filter: brightness(0.3) grayscale(0.5);
 }
 
 .hero h1 {
   font-family: 'Clash Display', sans-serif;
-  font-size: 3.5rem;
-  font-weight: 700;
-  line-height: 1.1;
-  text-transform: uppercase;
+  font-size: 4rem;
+  line-height: 0.9;
   margin-bottom: 20px;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--text-secondary);
-  font-weight: 300;
-  max-width: 400px;
-  margin: 0 auto 40px;
+  max-width: 300px;
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
-/* Pulsing Scroll Indicator */
-.scroll-indicator {
-  position: absolute;
-  bottom: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  animation: bounce 2s infinite;
+.btn-premium-outline {
+  padding: 18px 40px;
+  border: 1px solid var(--border-glass);
+  color: #FFF;
+  text-decoration: none;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 600;
+  border-radius: 100px;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
 }
-.scroll-indicator div {
-  width: 20px; height: 30px;
-  border: 2px solid var(--text-secondary);
-  border-radius: 10px;
+
+/* Story Section */
+.story-section {
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.story-card {
+  padding: 40px 30px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.story-card h2 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.hourglass-inverted {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+.story-card p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.manifesto-call {
+  font-family: 'Clash Display', sans-serif;
+  color: #FFF !important;
+  font-weight: 600;
+  margin-top: 40px;
+}
+
+/* Store */
+.store {
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.product-card {
   position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  height: 500px;
 }
-.scroll-indicator div::before {
-  content: '';
+
+.product-image {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-info {
   position: absolute;
-  top: 5px; left: 50%;
-  transform: translateX(-50%);
-  width: 4px; height: 4px;
-  background: var(--neon-purple);
-  border-radius: 50%;
-  animation: scrollDot 2s infinite;
+  bottom: 0; left: 0; width: 100%;
+  padding: 40px 25px 25px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
-@keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);} 40% {transform: translateX(-50%) translateY(-10px);} 60% {transform: translateX(-50%) translateY(-5px);} }
-@keyframes scrollDot { 0% { top: 5px; opacity: 1; } 100% { top: 15px; opacity: 0; } }
+.product-name {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
 
-/* ==========================================================
-   Barra Sticky Premium (Glassmorphism)
-========================================================== */
+.product-price {
+  color: var(--acid-green);
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.product-buy-btn {
+  width: 60px; height: 60px;
+  background: #FFF;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Sticky CTA */
 .sticky-cta-container {
   position: fixed;
-  bottom: 20px; left: 50%;
-  transform: translateX(-50%) translateY(150%);
+  bottom: 30px; left: 50%;
+  transform: translateX(-50%) translateY(200%);
   width: calc(100% - 40px);
   max-width: 400px;
   z-index: 999;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .sticky-cta-container.visible {
@@ -186,247 +307,51 @@ header {
 }
 
 .btn-premium {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   width: 100%;
-  padding: 18px;
-  background: rgba(176, 38, 255, 0.85); /* Neon Purple */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 16px;
-  font-family: 'Clash Display', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  text-decoration: none;
-  box-shadow: 0 10px 30px rgba(176, 38, 255, 0.3);
-  transition: all 0.2s ease;
-}
-
-.btn-premium:active {
-  transform: scale(0.96);
-}
-
-/* ==========================================================
-   Store / Vitrine (Imersão de Tela Cheia)
-========================================================== */
-.store {
-  padding: 60px 20px 120px;
-}
-
-.section-title {
-  font-family: 'Clash Display', sans-serif;
-  font-size: 2.2rem;
-  text-transform: uppercase;
+  padding: 22px;
+  background: var(--neon-purple);
+  color: #FFF;
   text-align: center;
-  margin-bottom: 40px;
-}
-
-.product-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.product-card {
-  position: relative;
+  text-decoration: none;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 700;
   border-radius: 20px;
-  overflow: hidden;
+  letter-spacing: 2px;
+  box-shadow: 0 15px 40px rgba(176, 38, 255, 0.4);
+}
+
+/* Music Section */
+.music-section {
+  padding: 80px 20px 150px;
+  text-align: center;
+}
+
+.spotify-container {
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Hidden Utility */
+.hidden {
+  display: none;
+}
+
+/* Fade Elements */
+.fade-element {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: all 0.8s ease;
 }
 
-.product-card.visible {
+.fade-element.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.product-badge {
-  position: absolute;
-  top: 15px; left: 15px;
-  background: var(--acid-green);
-  color: #000;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 6px 12px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  z-index: 2;
-  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
-
-.product-image {
-  width: 100%;
-  height: 450px;
-  object-fit: cover;
-  filter: contrast(1.1) brightness(0.9);
-}
-
-.product-info {
-  position: absolute;
-  bottom: 0; left: 0; width: 100%;
-  padding: 30px 20px 20px;
-  background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0) 100%);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.product-details {
-  flex: 1;
-}
-
-.product-name {
-  font-family: 'Clash Display', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-
-.product-price {
-  font-size: 1.1rem;
-  color: var(--acid-green);
-  font-weight: 600;
-  margin-top: 5px;
-}
-
-.product-buy-btn {
-  background: var(--text-primary);
-  color: #000;
-  width: 50px; height: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: transform 0.2s ease;
-}
-
-.product-buy-btn:active {
-  transform: scale(0.9);
-}
-
-/* ==========================================================
-   Comunidade (Social Proof Dinâmico)
-========================================================== */
-.community-proof {
-  padding: 40px 0 80px;
-  overflow: hidden;
-}
-
-.carousel-container {
-  display: flex;
-  gap: 15px;
-  padding: 0 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none; /* Firefox */
-}
-.carousel-container::-webkit-scrollbar { display: none; }
-
-.community-img {
-  min-width: 250px;
-  height: 350px;
-  scroll-snap-align: center;
-  object-fit: cover;
-  border-radius: 16px;
-  border: 1px solid var(--border-glass);
-}
-
-/* ==========================================================
-   Live Notification Popup (Engenharia de Persuasão)
-========================================================== */
-.live-notification {
-  position: fixed;
-  top: 80px; left: 20px; right: 20px;
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  z-index: 1000;
-  transform: translateY(-150%);
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.live-notification.show {
-  transform: translateY(0);
-}
-
-.live-avatar {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.live-text {
-  font-size: 0.85rem;
-  line-height: 1.2;
-}
-
-.live-text strong {
-  color: var(--neon-purple);
-}
-
-.live-time {
-  font-size: 0.7rem;
-  color: var(--text-secondary);
-  margin-top: 2px;
-}
-
-/* ==========================================================
-   Poema & Manifesto
-========================================================== */
-.poem-manifesto {
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.poem-title {
-  font-family: 'Clash Display', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
-
-.poem-lines p {
-  font-size: 1.3rem;
-  color: var(--text-secondary);
-  margin-bottom: 20px;
-  font-weight: 300;
-}
-
-.poem-lines p strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-/* Loading Overlay for Checkout */
-.checkout-overlay {
-  position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
-  background: var(--bg-dark);
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-.checkout-overlay.active {
-  opacity: 1;
-  pointer-events: all;
-}
-.spinner {
-  width: 40px; height: 40px;
-  border: 3px solid rgba(176,38,255,0.3);
-  border-top-color: var(--neon-purple);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 20px;
-}
-@keyframes spin { to { transform: rotate(360deg); } }

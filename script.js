@@ -1,42 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Intersection Observer for Fade-In Elements
-  const fadeElements = document.querySelectorAll('.fade-element');
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-  };
+  const hookLoader = document.getElementById('hook-loader');
+  const startBtn = document.getElementById('start-journey');
+  const mainContent = document.getElementById('main-content');
+  const stickyCta = document.getElementById('sticky-cta');
 
+  // 1. 🧲 THE HOOK: Lógica de entrada
+  startBtn.addEventListener('click', () => {
+    hookLoader.classList.add('fade-out');
+    mainContent.classList.remove('hidden');
+    
+    // Inicia animações de entrada
+    setTimeout(() => {
+      document.querySelector('.hero-content').classList.add('visible');
+    }, 100);
+  });
+
+  // 2. Intersection Observer para elementos Fade-In
+  const fadeElements = document.querySelectorAll('.fade-element');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  fadeElements.forEach(el => observer.observe(el));
-
-  // 2. Sticky CTA Logic
-  const stickyCta = document.getElementById('sticky-cta');
-  const storeSection = document.getElementById('store');
-
-  const stickyObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      // Show sticky CTA when we are NOT intersecting the store section
-      if (!entry.isIntersecting) {
-        stickyCta.classList.add('visible');
-      } else {
-        stickyCta.classList.remove('visible');
       }
     });
   }, { threshold: 0.1 });
 
-  if (storeSection && stickyCta) {
-    stickyObserver.observe(storeSection);
-  }
+  fadeElements.forEach(el => observer.observe(el));
 
-  // 3. Live Notification (Social Proof)
+  // 3. Sticky CTA Logic
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      stickyCta.classList.add('visible');
+    } else {
+      stickyCta.classList.remove('visible');
+    }
+  });
+
+  // 4. Copiar Cupom ao clicar (Efeito Magnético)
+  const promoBar = document.querySelector('.promo-bar');
+  const couponText = document.getElementById('copy-coupon');
+
+  promoBar.addEventListener('click', () => {
+    navigator.clipboard.writeText('EDM20').then(() => {
+      const originalText = promoBar.innerHTML;
+      promoBar.innerHTML = "CUPOM COPIADO! APROVEITE ➔";
+      promoBar.style.background = "#FFF";
+      
+      setTimeout(() => {
+        promoBar.innerHTML = originalText;
+        promoBar.style.background = "var(--acid-green)";
+      }, 2000);
+    });
+  });
+
+  // 5. Notificações Sociais (Social Proof)
   const notif = document.getElementById('live-notif');
   const notifName = document.getElementById('notif-name');
   const notifProduct = document.getElementById('notif-product');
@@ -45,8 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const fakePurchases = [
     { name: "Lucas T.", product: "Camiseta Original", img: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&w=100&q=80" },
     { name: "Mariana S.", product: "Camiseta The Sun", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&w=100&q=80" },
-    { name: "Pedro H.", product: "Camiseta Drive", img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&w=100&q=80" },
-    { name: "Julia C.", product: "Camiseta Dream", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&w=100&q=80" }
+    { name: "Pedro H.", product: "Camiseta Drive", img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&w=100&q=80" }
   ];
 
   function showRandomNotification() {
@@ -56,20 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
     notifImg.src = randomPurchase.img;
     
     notif.classList.add('show');
-    
-    setTimeout(() => {
-      notif.classList.remove('show');
-    }, 4000);
+    setTimeout(() => notif.classList.remove('show'), 4000);
   }
 
-  // Primeira notificação aparece após 8 segundos
-  setTimeout(() => {
-    showRandomNotification();
-    // Depois, repete aleatoriamente a cada 15 a 30 segundos
-    setInterval(showRandomNotification, Math.floor(Math.random() * 15000) + 15000);
-  }, 8000);
+  setInterval(showRandomNotification, 20000);
 
-  // 4. Checkout Overlay & Omni Pixel Tracking on Click
+  // 6. Checkout Overlay
   const buyLinks = document.querySelectorAll('.buy-link');
   const overlay = document.getElementById('checkout-overlay');
 
@@ -77,24 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const href = link.getAttribute('href');
-      const productId = link.getAttribute('data-product-id');
-      const productName = link.getAttribute('data-product-name');
-
-      // Dispara o Pixel Customizado OmniGrowth
-      if (typeof window.OmniGrowth !== 'undefined') {
-        window.OmniGrowth('track', 'add_to_cart', {
-          product_id: productId,
-          product_name: productName
-        });
-      }
-
-      // Show VIP loading overlay
       overlay.classList.add('active');
-
-      // Wait 1.2s for dramatic effect, then redirect
+      
       setTimeout(() => {
         window.location.href = href;
-      }, 1200);
+      }, 1500);
     });
   });
 });

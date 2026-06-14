@@ -1,23 +1,19 @@
 # MEMORIA.md — Impontuality Landing Page
-Última atualização: 2026-06-11
+Última atualização: 2026-06-12
 
 ## 1. ESTADO ATUAL (o que existe e funciona AGORA)
-- **Frontend / Landing Page** — status: ✅ funcionando
-  - Hero section imersiva (100vh) focada em conversão mobile.
-  - Poema manifesto ("I'am from Bras(z)il").
-  - Prova social (Comunidade Impontuality) com grid de fotos.
-  - Loja com botões "Vestir Agora" (cor Dourado-Âmbar) com gatilho de escassez.
-  - Tracking (TikTok Pixel, Meta Pixel, Microsoft Clarity) ativos e blindados.
-  - Otimizações de performance (Lazy loading e throttle de scroll) implementadas.
+- [Estrutura Base] - status: ✅ funcionando (HTML/CSS/JS inicial)
+- [Pixels de Rastreamento] - status: ✅ funcionando (Meta, TikTok, OmniGrowth)
+- [Notificações Sociais] - status: ✅ funcionando (Social Proof fake)
+- [Narrativa Visual] - status: ⚠️ parcial (Em reestruturação para Storytelling Magnético)
 
 ## 2. DECISÕES DE ARQUITETURA (e por quê)
-- Decisão: Abordagem Mobile-First Estrita
-  Razão: 100% do tráfego detectado pelo Clarity vem de dispositivos móveis via Instagram.
-  Data: 2026-06-11
-  Alternativas rejeitadas: Layouts focados em Desktop, pois a retenção mobile estava crítica (27 segundos).
-- Decisão: Injeção direta de Pixels com verificações de nulidade (`typeof !== 'undefined'`)
-  Razão: Garantir resiliência se um serviço de terceiros (ex: Clarity) falhar ou for bloqueado por AdBlockers.
-  Data: 2026-06-11
+- Decisão: Mobile-First Scroll Snapping
+  Razão: Proporcionar uma experiência de "app nativo" no smartphone, focando em uma seção por vez.
+- Decisão: Storytelling Progressivo (Nascimento 2021)
+  Razão: Conectar emocionalmente o usuário antes de pedir a compra (liberdade e espírito livre).
+- Decisão: Cupom Magnético EDM20
+  Razão: Gatilho de conversão imediata (20% OFF) integrado à estética visual.
 
 ## 3. CONTRATOS ATIVOS (fonte única de verdade de nomes/tipos)
 - Eventos de Tracking (TikTok/Meta):
@@ -35,8 +31,11 @@
 - N/A — Atualmente o projeto é 100% estático (GitHub Pages) sem backend ou processo de build que exija variáveis de ambiente em tempo de compilação. IDs de Pixel estão no código do cliente.
 
 ## 6. PRÓXIMOS PASSOS DECLARADOS
-1. Substituir imagens de placeholder (Unsplash) por fotos oficiais da Impontuality.
-2. Avaliar integração futura com um CMS (ex: Netlify CMS ou API da Uma Penca) para injetar produtos dinamicamente.
+1. Implementar o "Hero Hook" (Animação de entrada magnética).
+2. Adicionar a seção de história (Narrativa 2021 -> Liberdade).
+3. Estilizar o cupom EDM20 com animação neon.
+4. Otimizar performance para smartphone.
+5. Deploy no GitHub Pages.
 
 ## 7. ERROS JÁ RESOLVIDOS (não repetir o mesmo bug)
 - 2026-06-11 — Erro de JS (`addEventListener` on null) — Elementos faltantes quebrando a execução em 28% dos devices. — Adicionado condicional `if (elemento)` antes de atrelar eventos no `script.js`.
