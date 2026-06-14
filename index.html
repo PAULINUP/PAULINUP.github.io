@@ -15,8 +15,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <!-- Pixels (Mantidos da versão anterior) -->
+  <!-- Pixels de Rastreamento -->
   <script>
+    // OmniGrowth Pixel (MANTIDO)
     !function(o,m,n,i,g){
       o.OmniGrowth=o.OmniGrowth||function(){(o.OmniGrowth.q=o.OmniGrowth.q||[]).push(arguments)};
       var s=m.createElement(n);s.async=1;s.src=i;
@@ -25,6 +26,30 @@
     window.OMNIGROWTH_COMPANY_ID = "impontuality-music-id"; 
     OmniGrowth('init', window.OMNIGROWTH_COMPANY_ID);
     OmniGrowth('track', 'page_view');
+
+    // Meta Pixel (Facebook Pixel) - SUBSTITUA 'YOUR_META_PIXEL_ID' PELO SEU ID REAL
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_META_PIXEL_ID'); 
+    fbq('track', 'PageView');
+
+    // TikTok Pixel - SUBSTITUA 'YOUR_TIKTOK_PIXEL_ID' PELO SEU ID REAL
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods.forEach(function(item){ttq[item]=function(){ttq.push([item].concat(Array.prototype.slice.call(arguments)));}});ttq.setAndDefer=true;ttq.load=function(arg){ttq.push(['_load',arg]);return ttq};ttq.push(['_load', 'YOUR_TIKTOK_PIXEL_ID']); 
+      ttq.push(['_pageview']);
+      var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://analytics.tiktok.com/i18n/pixel/sdk.js';
+      var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+    }(window, document, 'ttq');
+
+    // Microsoft Clarity - SUBSTITUA 'YOUR_CLARITY_ID' PELO SEU ID REAL (Descomente para usar)
+    // (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity","script","YOUR_CLARITY_ID"); 
+
   </script>
 </head>
 <body>
@@ -47,11 +72,11 @@
     <a href="#home" class="logo-text">Impontuality</a>
   </header>
 
-  <main id="main-content" class="hidden">
+  <main id="main-content">
     <!-- HERO: Future Unbound -->
     <section class="hero" id="home">
       <div class="hero-video-container">
-        <img src="https://images.unsplash.com/photo-1517677208171-0bc672fdceee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" class="hero-bg-video" alt="Futuristic Street Background">
+        <img src="https://images.unsplash.com/photo-1620766165457-a8025baa338d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" class="hero-bg-video" alt="Futuristic Street Background">
       </div>
       
       <div class="hero-content">
@@ -82,20 +107,20 @@
         <!-- Produto 1 -->
         <div class="product-card fade-element">
           <div class="product-badge">ESSENCIAL</div>
-          <img loading="lazy" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta Original" class="product-image">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1607958729397-5e0427303024?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta Original" class="product-image">
           <div class="product-info">
             <div class="product-details">
               <div class="product-name">ORIGINAL_TEE</div>
               <div class="product-price">R$ 69,90</div>
             </div>
-            <a href="https://oficial.impontuality.com.br/camiseta/original-298650.html" class="product-buy-btn buy-link" data-product-id="original-298650" data-product-name="Camiseta Original">➔</a>
+            <a href="https://umapenca.com/impontuality/camiseta/original-298650.html" class="product-buy-btn buy-link" data-product-id="original-298650" data-product-name="Camiseta Original">➔</a>
           </div>
         </div>
 
         <!-- Produto 2 -->
         <div class="product-card fade-element">
           <div class="product-badge">NOVO</div>
-          <img loading="lazy" src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta The Sun" class="product-image">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1607958729397-5e0427303024?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta The Sun" class="product-image">
           <div class="product-info">
             <div class="product-details">
               <div class="product-name">SUN_CODE</div>
