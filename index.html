@@ -4,19 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   
-  <title>Impontuality | Future Unbound</title>
-  <meta name="description" content="Impontuality: Nascidos em 2021. Liberdade, streetwear e eletrônica. Redefinindo o tempo.">
+  <title>Impontuality | As Camisas Estão Vivas</title>
+  <meta name="description" content="Impontuality: nascida em 2021 para quem vive liberdade, streetwear e eletrônica. Uma experiência cinematográfica onde as camisas ganham vida.">
   <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⏳</text></svg>">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css">
 
-  <!-- GSAP Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <!-- Pixels de Rastreamento -->
   <script>
-    // OmniGrowth Pixel (MANTIDO)
     !function(o,m,n,i,g){
       o.OmniGrowth=o.OmniGrowth||function(){(o.OmniGrowth.q=o.OmniGrowth.q||[]).push(arguments)};
       var s=m.createElement(n);s.async=1;s.src=i;
@@ -26,7 +25,6 @@
     OmniGrowth('init', window.OMNIGROWTH_COMPANY_ID);
     OmniGrowth('track', 'page_view');
 
-    // Meta Pixel (Facebook Pixel) - SUBSTITUA 'YOUR_META_PIXEL_ID' PELO SEU ID REAL
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -38,164 +36,115 @@
     fbq('init', 'YOUR_META_PIXEL_ID'); 
     fbq('track', 'PageView');
 
-    // TikTok Pixel - SUBSTITUA 'YOUR_TIKTOK_PIXEL_ID' PELO SEU ID REAL
     !function (w, d, t) {
-      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods.forEach(function(item){ttq[item]=function(){ttq.push([item].concat(Array.prototype.slice.call(arguments)));}});ttq.setAndDefer=true;ttq.load=function(arg){ttq.push(['_load',arg]);return ttq};ttq.push(['_load', 'YOUR_TIKTOK_PIXEL_ID']); 
-      ttq.push(['_pageview']);
-      var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://analytics.tiktok.com/i18n/pixel/sdk.js';
-      var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=['page','track','identify','instances','debug','on','off','once','ready','alias','group','enableCookie','disableCookie'];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.load=function(e,n){var i='https://analytics.tiktok.com/i18n/pixel/events.js';ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=i;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};var o=document.createElement('script');o.type='text/javascript';o.async=!0;o.src=i+'?sdkid='+e+'&lib='+t;var a=document.getElementsByTagName('script')[0];a.parentNode.insertBefore(o,a)};
+      ttq.load('YOUR_TIKTOK_PIXEL_ID');
+      ttq.page();
     }(window, document, 'ttq');
   </script>
 </head>
 <body>
+  <div class="grain"></div>
+  <div class="promo-bar" id="promo-bar"><span>CUPOM <strong>EDM20</strong> — 20% OFF PARA QUEM ENTRA NO FLUXO</span></div>
 
-  <!-- Barra de Cupom Magnética -->
-  <div class="promo-bar">
-    <span>USE O CUPOM <strong id="copy-coupon">EDM20</strong> PARA 20% OFF</span>
-  </div>
-
-  <header>
+  <header class="topbar">
     <a href="#home" class="logo-text">Impontuality</a>
+    <a href="#store" class="nav-buy">Comprar</a>
   </header>
 
   <main>
-    <!-- HERO: Future Unbound -->
-    <section class="hero" id="home">
-      <div class="hero-video-container">
-        <img src="https://images.unsplash.com/photo-1620766165457-a8025baa338d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" class="hero-bg-video" alt="Futuristic Street Background">
+    <section class="cinema-hero" id="home">
+      <video class="hero-film" autoplay muted loop playsinline poster="https://umapenca.imgix.net/298650/92b5db47-0d07-4196-af5a-279582f1470f.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=900&h=1400">
+        <source src="videos/original_liquid.mp4" type="video/mp4">
+      </video>
+      <div class="hero-shade"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Impontuality apresenta</p>
+        <h1>As camisas estão vivas.</h1>
+        <p class="hero-text">Em 2021, uma ampulheta virou de cabeça para baixo. Daí nasceu uma marca para espíritos livres: streetwear, eletrônica e a decisão de viver os melhores momentos antes que o mundo tente medir você.</p>
+        <div class="hero-actions">
+          <a href="#film" class="primary-cta">Assistir ao drop</a>
+          <a href="#store" class="secondary-cta">Ir para compra</a>
+        </div>
       </div>
-      
-      <div class="hero-content">
-        <h1 class="text-futuristic">IMPUGNAR O TEMPO</h1>
-        <p>Streetwear para quem molda o futuro. Nascidos em 2021, redefinindo a liberdade.</p>
-        <a href="#store" class="btn-futuristic-outline">EXPLORAR COLEÇÃO</a>
-      </div>
-
-      <div class="scroll-indicator"><div></div></div>
+      <div class="swipe-cue">deslize</div>
     </section>
 
-    <!-- NARRATIVA: A Essência (2021) -->
+    <section class="film-intro" id="film">
+      <p class="chapter">Capítulo 01</p>
+      <h2>Quando uma estampa respira, ela deixa de ser roupa.</h2>
+      <p>Ela vira presença. Vira energia no corpo. Vira um personagem do seu momento. Cada camiseta abaixo carrega uma cena: sol, velocidade, sonho, líquido, oceano e liberdade.</p>
+    </section>
+
+    <section class="living-gallery" aria-label="Filme interativo das camisetas Impontuality">
+      <article class="living-card" data-product="Original Tee">
+        <video muted loop playsinline preload="metadata" poster="https://umapenca.imgix.net/298650/92b5db47-0d07-4196-af5a-279582f1470f.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=900&h=1400">
+          <source src="videos/original_liquid.mp4" type="video/mp4">
+        </video>
+        <div class="living-copy"><span>01</span><h3>Original não pede permissão.</h3><p>Tipografia líquida. Identidade em movimento. A peça para quem não entra no padrão.</p></div>
+      </article>
+
+      <article class="living-card" data-product="The Sun">
+        <video muted loop playsinline preload="metadata" poster="https://umapenca.imgix.net/298645/0fd1930d-00ca-4de2-aff3-a3bc43dd2a02.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=900&h=1400">
+          <source src="videos/the_sun_life.mp4" type="video/mp4">
+        </video>
+        <div class="living-copy"><span>02</span><h3>O sol abre um portal.</h3><p>Energia dourada no peito. Uma camiseta para acender a noite.</p></div>
+      </article>
+
+      <article class="living-card" data-product="Dream of Tomorrow">
+        <video muted loop playsinline preload="metadata" poster="https://umapenca.imgix.net/298647/614de2bb-d5b6-49f1-9d35-806a74f4d096.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=900&h=1400">
+          <source src="videos/dream_tomorrow_portal.mp4" type="video/mp4">
+        </video>
+        <div class="living-copy"><span>03</span><h3>Amanhã sonha de volta.</h3><p>Nuvens saem da estampa como se a peça lembrasse você de não viver pequeno.</p></div>
+      </article>
+
+      <article class="living-card" data-product="Drive">
+        <video muted loop playsinline preload="metadata" poster="https://umapenca.imgix.net/298646/825d1e7a-f155-4fc5-ac86-8b309d3500fd.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=900&h=1400">
+          <source src="videos/drive_night_run.mp4" type="video/mp4">
+        </video>
+        <div class="living-copy"><span>04</span><h3>Drive é fuga consciente.</h3><p>Uma pista neon dentro da camiseta. Velocidade para quem escolhe o próprio caminho.</p></div>
+      </article>
+
+      <article class="living-card" data-product="Blue Vibe">
+        <video muted loop playsinline preload="metadata" poster="https://umapenca.imgix.net/298635/24b74877-8e0c-475c-bde9-d6a0244089ca.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=900&h=1400">
+          <source src="videos/blue_entity.mp4" type="video/mp4">
+        </video>
+        <div class="living-copy"><span>05</span><h3>Azul também é pulso.</h3><p>Frio, profundo, elétrico. Uma entidade visual para quem carrega calma e intensidade.</p></div>
+      </article>
+    </section>
+
     <section class="story-section" id="about">
       <div class="story-card glass-panel">
-        <h2 class="text-futuristic">ORIGEM: 2021</h2>
-        <div class="hourglass-inverted">⏳</div>
-        <p>Em um mundo ditado por relógios, escolhemos a <strong>liberdade</strong>. A ampulheta invertida é nosso manifesto: o tempo não nos define, nós o redefinimos.</p>
-        <p>Impontuality não é sobre atraso, é sobre <strong>presença plena</strong>. É a arte de viver cada instante, sem as amarras do convencional.</p>
-        <p class="manifesto-call">Se você sente o pulso do amanhã, bem-vindo à <strong>IMPONTUALITY</strong>.</p>
+        <p class="chapter">Manifesto</p>
+        <h2>Impontuality não é atraso. É presença.</h2>
+        <p>Nasceu em 2021 como uma resposta simples: se a vida está passando rápido demais, então a gente vira a ampulheta. A marca existe para lembrar que liberdade não é um lugar; é uma sensação no corpo.</p>
+        <p class="manifesto-call">Se você é um espírito livre, prazer: IMPONTUALITY.</p>
       </div>
     </section>
 
-    <!-- VITRINE: Produtos -->
     <section class="store" id="store">
-      <h2 class="section-title text-futuristic">DROP: SYNC</h2>
-      
+      <div class="store-head">
+        <p class="chapter">Drop disponível</p>
+        <h2 class="section-title">Escolha quem você vai vestir.</h2>
+        <p>Use <strong>EDM20</strong> no checkout. Cada imagem abre a página oficial do produto.</p>
+      </div>
       <div class="product-grid">
-        <!-- Produto 1: Camiseta Impontuality -->
-        <div class="product-card">
-          <div class="product-badge">ESSENCIAL</div>
-          <a href="https://oficial.impontuality.com.br/camiseta/impontuality-298643.html" class="product-link">
-            <img src="https://umapenca.imgix.net/298643/18b743a4-5270-46e8-878f-0a6ccd860a50.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=600&h=900" alt="Camiseta Impontuality" class="product-image">
-            <div class="product-info">
-              <div class="product-details">
-                <div class="product-name">IMPONTUALITY_TEE</div>
-                <div class="product-price">R$ 84,30</div>
-              </div>
-              <div class="product-buy-btn">➔</div>
-            </div>
-          </a>
-        </div>
-
-        <!-- Produto 2: Camiseta Original -->
-        <div class="product-card">
-          <div class="product-badge">BEST SELLER</div>
-          <a href="https://oficial.impontuality.com.br/camiseta/original-298650.html" class="product-link">
-            <img src="https://umapenca.imgix.net/298650/92b5db47-0d07-4196-af5a-279582f1470f.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=600&h=900" alt="Camiseta Original" class="product-image">
-            <div class="product-info">
-              <div class="product-details">
-                <div class="product-name">ORIGINAL_TEE</div>
-                <div class="product-price">R$ 84,30</div>
-              </div>
-              <div class="product-buy-btn">➔</div>
-            </div>
-          </a>
-        </div>
-
-        <!-- Produto 3: Camiseta Dream of tomorrow -->
-        <div class="product-card">
-          <div class="product-badge">FUTURO</div>
-          <a href="https://oficial.impontuality.com.br/camiseta/dream-of-tomorrow-298647.html" class="product-link">
-            <img src="https://umapenca.imgix.net/298647/614de2bb-d5b6-49f1-9d35-806a74f4d096.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=600&h=900" alt="Camiseta Dream of tomorrow" class="product-image">
-            <div class="product-info">
-              <div class="product-details">
-                <div class="product-name">DREAM_CODE</div>
-                <div class="product-price">R$ 84,30</div>
-              </div>
-              <div class="product-buy-btn">➔</div>
-            </div>
-          </a>
-        </div>
-
-        <!-- Produto 4: Camiseta Drive -->
-        <div class="product-card">
-          <div class="product-badge">NOVO</div>
-          <a href="https://oficial.impontuality.com.br/camiseta/drive-298646.html" class="product-link">
-            <img src="https://umapenca.imgix.net/298646/825d1e7a-f155-4fc5-ac86-8b309d3500fd.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=600&h=900" alt="Camiseta Drive" class="product-image">
-            <div class="product-info">
-              <div class="product-details">
-                <div class="product-name">DRIVE_TEE</div>
-                <div class="product-price">R$ 84,30</div>
-              </div>
-              <div class="product-buy-btn">➔</div>
-            </div>
-          </a>
-        </div>
-
-        <!-- Produto 5: Camiseta The sun -->
-        <div class="product-card">
-          <div class="product-badge">ENERGY</div>
-          <a href="https://oficial.impontuality.com.br/camiseta/the-sun-298645.html" class="product-link">
-            <img src="https://umapenca.imgix.net/298645/0fd1930d-00ca-4de2-aff3-a3bc43dd2a02.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=600&h=900" alt="Camiseta The sun" class="product-image">
-            <div class="product-info">
-              <div class="product-details">
-                <div class="product-name">SUN_CODE</div>
-                <div class="product-price">R$ 84,30</div>
-              </div>
-              <div class="product-buy-btn">➔</div>
-            </div>
-          </a>
-        </div>
-
-        <!-- Produto 6: Camiseta Blue -->
-        <div class="product-card">
-          <div class="product-badge">LIMITED</div>
-          <a href="https://oficial.impontuality.com.br/camiseta/blue-298635.html" class="product-link">
-            <img src="https://umapenca.imgix.net/298635/24b74877-8e0c-475c-bde9-d6a0244089ca.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=600&h=900" alt="Camiseta Blue" class="product-image">
-            <div class="product-info">
-              <div class="product-details">
-                <div class="product-name">BLUE_VIBE</div>
-                <div class="product-price">R$ 84,30</div>
-              </div>
-              <div class="product-buy-btn">➔</div>
-            </div>
-          </a>
-        </div>
+        <div class="product-card"><div class="product-badge">ESSENCIAL</div><a href="https://oficial.impontuality.com.br/camiseta/impontuality-298643.html" class="product-link"><img src="https://umapenca.imgix.net/298643/18b743a4-5270-46e8-878f-0a6ccd860a50.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=600&h=900" alt="Camiseta Impontuality" class="product-image"><div class="product-info"><div><div class="product-name">IMPONTUALITY_TEE</div><div class="product-price">R$ 84,30</div></div><div class="product-buy-btn">➔</div></div></a></div>
+        <div class="product-card"><div class="product-badge">BEST SELLER</div><a href="https://oficial.impontuality.com.br/camiseta/original-298650.html" class="product-link"><video class="product-image product-video" muted loop playsinline preload="metadata" poster="https://umapenca.imgix.net/298650/92b5db47-0d07-4196-af5a-279582f1470f.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=600&h=900"><source src="videos/original_liquid.mp4" type="video/mp4"></video><div class="product-info"><div><div class="product-name">ORIGINAL_TEE</div><div class="product-price">R$ 84,30</div></div><div class="product-buy-btn">➔</div></div></a></div>
+        <div class="product-card"><div class="product-badge">FUTURO</div><a href="https://oficial.impontuality.com.br/camiseta/dream-of-tomorrow-298647.html" class="product-link"><video class="product-image product-video" muted loop playsinline preload="metadata" poster="https://umapenca.imgix.net/298647/614de2bb-d5b6-49f1-9d35-806a74f4d096.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=600&h=900"><source src="videos/dream_tomorrow_portal.mp4" type="video/mp4"></video><div class="product-info"><div><div class="product-name">DREAM_CODE</div><div class="product-price">R$ 84,30</div></div><div class="product-buy-btn">➔</div></div></a></div>
+        <div class="product-card"><div class="product-badge">NOVO</div><a href="https://oficial.impontuality.com.br/camiseta/drive-298646.html" class="product-link"><video class="product-image product-video" muted loop playsinline preload="metadata" poster="https://umapenca.imgix.net/298646/825d1e7a-f155-4fc5-ac86-8b309d3500fd.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=600&h=900"><source src="videos/drive_night_run.mp4" type="video/mp4"></video><div class="product-info"><div><div class="product-name">DRIVE_TEE</div><div class="product-price">R$ 84,30</div></div><div class="product-buy-btn">➔</div></div></a></div>
+        <div class="product-card"><div class="product-badge">ENERGY</div><a href="https://oficial.impontuality.com.br/camiseta/the-sun-298645.html" class="product-link"><video class="product-image product-video" muted loop playsinline preload="metadata" poster="https://umapenca.imgix.net/298645/0fd1930d-00ca-4de2-aff3-a3bc43dd2a02.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=600&h=900"><source src="videos/the_sun_life.mp4" type="video/mp4"></video><div class="product-info"><div><div class="product-name">SUN_CODE</div><div class="product-price">R$ 84,30</div></div><div class="product-buy-btn">➔</div></div></a></div>
+        <div class="product-card"><div class="product-badge">LIMITED</div><a href="https://oficial.impontuality.com.br/camiseta/blue-298635.html" class="product-link"><video class="product-image product-video" muted loop playsinline preload="metadata" poster="https://umapenca.imgix.net/298635/24b74877-8e0c-475c-bde9-d6a0244089ca.jpg?auto=compress,format&cs=origin&q=65&fit=crop&w=600&h=900"><source src="videos/blue_entity.mp4" type="video/mp4"></video><div class="product-info"><div><div class="product-name">BLUE_VIBE</div><div class="product-price">R$ 84,30</div></div><div class="product-buy-btn">➔</div></div></a></div>
       </div>
     </section>
 
-    <!-- SOUNDSCAPE -->
     <section class="music-section">
-      <h2 class="section-title text-futuristic">SOUNDSCAPE</h2>
-      <div class="spotify-container glass-panel">
-        <iframe src="https://open.spotify.com/embed/playlist/4vnd8wPeEkenSPN5QVUMRk?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
+      <h2 class="section-title">SOUNDSCAPE</h2>
+      <div class="spotify-container glass-panel"><iframe src="https://open.spotify.com/embed/playlist/4vnd8wPeEkenSPN5QVUMRk?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
     </section>
   </main>
 
-  <!-- Sticky CTA Mobile -->
-  <div class="sticky-cta-container" id="sticky-cta">
-    <a href="#store" class="btn-futuristic">ATIVAR 20% OFF</a>
-  </div>
-
+  <div class="sticky-cta-container" id="sticky-cta"><a href="#store" class="btn-futuristic">ATIVAR 20% OFF</a></div>
   <script src="script.js"></script>
 </body>
 </html>
