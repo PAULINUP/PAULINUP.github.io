@@ -124,9 +124,17 @@ footer .b{font-weight:900;letter-spacing:.14em;color:var(--muted);margin-bottom:
   @keyframes glow{0%,100%{box-shadow:0 10px 30px -8px rgba(255,61,113,.55)}50%{box-shadow:0 12px 38px -6px rgba(255,122,69,.7)}}
 }
 @media(min-width:560px){.hero h1{font-size:54px}}
+.promo{background:var(--sunset);color:#160b07;text-align:center;font-weight:800;font-size:12.5px;padding:9px 14px;line-height:1.35}
+.promo b{font-weight:900}
+.coupon{display:flex;align-items:center;justify-content:center;gap:10px;max-width:340px;margin:2px auto 14px;background:rgba(55,230,207,.08);border:1px dashed rgba(55,230,207,.5);border-radius:12px;padding:10px 12px;font-size:12.5px;color:var(--muted);text-align:left}
+.coupon .cchip{font-weight:900;letter-spacing:.06em;color:var(--sea);border:1px solid rgba(55,230,207,.5);border-radius:8px;padding:5px 10px;background:rgba(55,230,207,.07);flex-shrink:0}
+.coupon b{color:var(--ink);font-weight:800}
+.stick .p .off{color:var(--sea);font-weight:800;font-size:10px;display:block;margin-top:1px}
 </style>
 </head>
 <body>
+
+<div class="promo">🎟 <b>20% OFF</b> no seu pedido · use o código <b>EDM20</b> no checkout</div>
 
 <header>
   <div class="hd">
@@ -148,6 +156,7 @@ footer .b{font-weight:900;letter-spacing:.14em;color:var(--muted);margin-bottom:
       <div class="buybox">
         <div class="price"><span class="cur">R$</span><span class="now">107,90</span></div>
         <div class="installments">ou em até 3x sem juros · à vista no Pix</div>
+        <div class="coupon"><span class="cchip">EDM20</span><span>−20% no checkout · <b>enquanto o drop durar</b></span></div>
         <a class="cta" href="https://oficial.impontuality.com.br/camiseta/beach-383873.html" onclick="return goBuy()">Comprar agora <span class="arr">→</span></a>
         <div class="reassure"><span>✓ <b>Algodão premium</b></span><span>✓ <b>Envio p/ todo Brasil</b></span><span>✓ <b>Troca fácil</b></span></div>
       </div>
@@ -190,6 +199,7 @@ footer .b{font-weight:900;letter-spacing:.14em;color:var(--muted);margin-bottom:
       <div class="buybox">
         <div class="price"><span class="cur">R$</span><span class="now">107,90</span></div>
         <div class="installments">3x sem juros · Pix à vista</div>
+        <div class="coupon"><span class="cchip">EDM20</span><span>−20% no checkout · <b>enquanto o drop durar</b></span></div>
         <a class="cta" href="https://oficial.impontuality.com.br/camiseta/beach-383873.html" onclick="return goBuy()">Quero a minha <span class="arr">→</span></a>
       </div>
     </div>
@@ -198,7 +208,7 @@ footer .b{font-weight:900;letter-spacing:.14em;color:var(--muted);margin-bottom:
 
 <div class="stick">
   <div class="in">
-    <div class="p"><b>R$107,90</b><small>Camiseta Beach</small></div>
+    <div class="p"><b>R$107,90</b><small>Camiseta Beach</small><span class="off">−20% · EDM20</span></div>
     <a class="cta" href="https://oficial.impontuality.com.br/camiseta/beach-383873.html" onclick="return goBuy()">Comprar →</a>
   </div>
 </div>
